@@ -3,179 +3,191 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kotao Academy — Formations Productivité & Business</title>
+  <meta name="description" content="Kotao Academy — Formations audiovisuelles professionnelles en studio à Colombes (92). Vidéo, audio, IA, production, créateur de contenu, photo." />
+  <title>Kotao Academy — Formations Audiovisuelles</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="logo">Kotao<span>.</span>Academy</div>
-    <ul class="nav-links">
+  <!-- ════════════ NAV ════════════ -->
+  <nav class="nav">
+    <a href="#" class="nav__logo">Kotao<span>.</span>Academy</a>
+    <ul class="nav__links">
       <li><a href="#formations">Formations</a></li>
       <li><a href="#catalogues">Catalogues</a></li>
       <li><a href="#intervenants">Intervenants</a></li>
       <li><a href="#about">À propos</a></li>
       <li><a href="#tarifs">Tarifs</a></li>
-      <li><a href="#tarifs" class="nav-cta">Réserver →</a></li>
+      <li><a href="#tarifs" class="nav__cta">Réserver →</a></li>
     </ul>
   </nav>
 
-  <!-- HERO -->
+  <!-- ════════════ HERO ════════════ -->
   <section class="hero">
-    <div class="hero-badge">🎬 Studio Kotao · Colombes 92 · 19 ans d'expérience</div>
-    <h1>Filmer, monter<br>et <em>diffuser</em><br>ta vidéo au smartphone</h1>
-    <p style="font-weight:600;color:var(--white);">Apprends en une journée ce que les pros mettent des années à maîtriser.</p>
-    <p>La formation Mobile Creator du Studio Kotao : une journée immersive pour devenir autonome dans ta production de contenu, encadrée par des pros qui produisent au quotidien.</p>
-    <div class="hero-buttons">
-      <a href="#formations" class="btn-primary">Voir la formation</a>
-      <a href="#about" class="btn-secondary">En savoir plus</a>
+    <div class="hero__glow"></div>
+    <div class="hero__badge">🎬 Studio Kotao · Colombes 92 · 19 ans d'expérience</div>
+
+    <h1 class="hero__title">
+      Filmer, monter<br>et <em>diffuser</em><br>ta vidéo au smartphone
+    </h1>
+
+    <p class="hero__sub hero__sub--bold">Apprends en une journée ce que les pros mettent des années à maîtriser.</p>
+    <p class="hero__sub">La formation Mobile Creator du Studio Kotao : une journée immersive pour devenir autonome dans ta production de contenu, encadrée par des pros qui produisent au quotidien.</p>
+
+    <div class="hero__actions">
+      <a href="#formations" class="btn btn-primary">Voir la formation</a>
+      <a href="#about"      class="btn btn-ghost">En savoir plus</a>
     </div>
-    <div class="hero-stats">
+
+    <div class="hero__stats">
       <div class="stat" data-reveal>
-        <div class="stat-number">19 ans</div>
-        <div class="stat-label">D'expérience studio</div>
+        <div class="stat__number">19 ans</div>
+        <div class="stat__label">D'expérience studio</div>
       </div>
       <div class="stat" data-reveal>
-        <div class="stat-number">67+</div>
-        <div class="stat-label">Alternants & stagiaires formés</div>
+        <div class="stat__number">67+</div>
+        <div class="stat__label">Alternants & stagiaires formés</div>
       </div>
       <div class="stat" data-reveal>
-        <div class="stat-number">1 jour</div>
-        <div class="stat-label">7h en présentiel studio</div>
+        <div class="stat__number">1 jour</div>
+        <div class="stat__label">7h en présentiel studio</div>
       </div>
       <div class="stat" data-reveal>
-        <div class="stat-number">700€</div>
-        <div class="stat-label">HT — la formation</div>
+        <div class="stat__number">700€</div>
+        <div class="stat__label">HT — la formation</div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES STRIP -->
-  <div class="features-strip">
-    <div class="features-inner stagger">
-      <div class="feature" data-reveal>
-        <div class="feature-icon">🎥</div>
-        <h4>En studio pro</h4>
-        <p>Formation dans notre studio de tournage intégré, set complet caméra, lumière & son.</p>
-      </div>
-      <div class="feature" data-reveal>
-        <div class="feature-icon">👤</div>
-        <h4>1 participant</h4>
-        <p>Formation individuelle, dès une seule personne, encadrée par nos formateurs.</p>
-      </div>
-      <div class="feature" data-reveal>
-        <div class="feature-icon">🎬</div>
-        <h4>Formateurs experts</h4>
-        <p>Guilhem Charreton (fondateur/producteur) & Adrien Della Valle (réalisateur/chef monteur).</p>
-      </div>
-      <div class="feature" data-reveal>
-        <div class="feature-icon">📱</div>
-        <h4>100% smartphone</h4>
-        <p>Tournage, montage et diffusion réalisés de A à Z avec ton téléphone.</p>
-      </div>
-      <div class="feature" data-reveal>
-        <div class="feature-icon">📜</div>
-        <h4>Attestation</h4>
-        <p>Attestation de fin de formation remise à l'issue de la journée.</p>
+  <!-- ════════════ STRIP ════════════ -->
+  <div class="strip">
+    <div class="container">
+      <div class="strip__grid stagger">
+        <div class="feature" data-reveal>
+          <div class="feature__icon">🎥</div>
+          <h4 class="feature__title">En studio pro</h4>
+          <p class="feature__desc">Formation dans notre studio de tournage intégré, set complet caméra, lumière & son.</p>
+        </div>
+        <div class="feature" data-reveal>
+          <div class="feature__icon">👤</div>
+          <h4 class="feature__title">1 participant</h4>
+          <p class="feature__desc">Formation individuelle, dès une seule personne, encadrée par nos formateurs.</p>
+        </div>
+        <div class="feature" data-reveal>
+          <div class="feature__icon">🎬</div>
+          <h4 class="feature__title">Formateurs experts</h4>
+          <p class="feature__desc">Guilhem Charreton (fondateur/producteur) & Adrien Della Valle (réalisateur/chef monteur).</p>
+        </div>
+        <div class="feature" data-reveal>
+          <div class="feature__icon">📱</div>
+          <h4 class="feature__title">100% smartphone</h4>
+          <p class="feature__desc">Tournage, montage et diffusion réalisés de A à Z avec ton téléphone.</p>
+        </div>
+        <div class="feature" data-reveal>
+          <div class="feature__icon">📜</div>
+          <h4 class="feature__title">Attestation</h4>
+          <p class="feature__desc">Attestation de fin de formation remise à l'issue de la journée.</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- FORMATIONS -->
+  <!-- ════════════ FORMATIONS ════════════ -->
   <section class="section" id="formations">
-    <span class="section-tag" data-reveal>Catalogue</span>
-    <h2 class="section-title" data-reveal>Nos formations<br>en studio</h2>
-    <p class="section-sub" data-reveal>Des formations courtes et intensives, en présentiel dans notre studio de Colombes, encadrées par l'équipe qui produit au quotidien.</p>
+    <div class="container">
+      <span class="section-tag" data-reveal>Catalogue</span>
+      <h2 class="section-title" data-reveal>Nos formations<br>en studio</h2>
+      <p class="section-sub" data-reveal>Des formations courtes et intensives, en présentiel dans notre studio de Colombes, encadrées par l'équipe qui produit au quotidien.</p>
 
-    <div class="formations-grid stagger">
+      <div class="grid-auto stagger">
 
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip>
-          <img src="https://images.unsplash.com/photo-1551817958-d9d86fb29431?w=600&q=80" alt="Mobile Creator" />
-          <span class="card-badge">Bestseller</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span>⏱ 1 jour · 7h en studio</span>
-            <span>👤 Présentiel, 1 participant</span>
+        <div class="card" data-reveal>
+          <div class="card__img" data-clip>
+            <img src="https://images.unsplash.com/photo-1551817958-d9d86fb29431?w=600&q=80" alt="Mobile Creator" />
+            <span class="card__badge">Bestseller</span>
           </div>
-          <h3>Mobile Creator — Filmer, monter et diffuser sa vidéo</h3>
-          <p>Maîtrise les techniques de tournage, de montage et de diffusion sur smartphone pour réaliser des vidéos professionnelles et devenir autonome dans ta production de contenu.</p>
-          <div class="card-footer">
-            <div class="card-price">700€ <small>HT</small></div>
-            <a href="reservation.html?formation=mobile" class="btn-card">Réserver →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip>
-          <img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=600&q=80" alt="Creator Video" />
-          <span class="card-badge">Nouveau</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span>⏱ 1 jour · studio + tournage</span>
-            <span>👤 Présentiel, 1 participant</span>
-          </div>
-          <h3>Creator Video — Devenir créateur de contenu</h3>
-          <p>Immersion studio, tournage avec caméra pro (Sony FX3 / Black Magic 6K), post-production sur CapCut ou Premiere et analyse de ton projet en fin de journée.</p>
-          <div class="card-footer">
-            <div class="card-price">Sur devis</div>
-            <a href="reservation.html?formation=creator" class="btn-card">Réserver →</a>
+          <div class="card__body">
+            <div class="card__meta">
+              <span>⏱ 1 jour · 7h en studio</span>
+              <span>👤 Présentiel, 1 participant</span>
+            </div>
+            <h3 class="card__title">Mobile Creator — Filmer, monter et diffuser sa vidéo</h3>
+            <p class="card__desc">Maîtrise les techniques de tournage, de montage et de diffusion sur smartphone pour réaliser des vidéos professionnelles et devenir autonome dans ta production de contenu.</p>
+            <div class="card__footer">
+              <div class="card__price">700€ <small>HT</small></div>
+              <a href="reservation.html?formation=mobile" class="btn btn-outline-accent">Réserver →</a>
+            </div>
           </div>
         </div>
-      </div>
 
-    </div>
-  </section>
-
-  <!-- PROGRAMME MOBILE CREATOR -->
-  <section class="section">
-    <span class="section-tag" data-reveal>Programme</span>
-    <h2 class="section-title" data-reveal>Mobile Creator —<br>déroulé de la journée</h2>
-    <p class="section-sub" data-reveal>7h00, de 9h00 à 18h00, en deux séquences de 3h30 dans notre studio de Colombes.</p>
-
-    <div class="formations-grid stagger">
-      <div class="card" data-reveal>
-        <div class="card-body">
-          <div class="card-meta"><span>9h00 – 12h30</span></div>
-          <h3>Module 1 — Les bons réflexes</h3>
-          <p>Composition de l'image, équipements (micro, lumière, stabilisation), réglages caméra du smartphone, cadrages, mouvements, raccords & transitions, contrôle de la lumière et du son, écriture du synopsis et du pitch.</p>
+        <div class="card" data-reveal>
+          <div class="card__img" data-clip>
+            <img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=600&q=80" alt="Creator Video" />
+            <span class="card__badge">Nouveau</span>
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span>⏱ 1 jour · studio + tournage</span>
+              <span>👤 Présentiel, 1 participant</span>
+            </div>
+            <h3 class="card__title">Creator Video — Devenir créateur de contenu</h3>
+            <p class="card__desc">Immersion studio, tournage avec caméra pro (Sony FX3 / Black Magic 6K), post-production sur CapCut ou Premiere et analyse de ton projet en fin de journée.</p>
+            <div class="card__footer">
+              <div class="card__price">Sur devis</div>
+              <a href="reservation.html?formation=creator" class="btn btn-outline-accent">Réserver →</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card-body">
-          <div class="card-meta"><span>13h30 – 18h00</span></div>
-          <h3>Séquence 2 — Mise en situation & post-production</h3>
-          <p>Préparation d'un tournage (message, script, organisation, matériel), exercices pratiques (interview, reportage, vlog), montage simple (dérushage, musique, sous-titrage), export et diffusion sur les réseaux sociaux.</p>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- CATALOGUES DE FORMATIONS -->
-  <section class="catalogues-section" id="catalogues">
-    <div class="catalogues-inner">
+  <!-- ════════════ PROGRAMME ════════════ -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <span class="section-tag" data-reveal>Programme</span>
+      <h2 class="section-title" data-reveal>Mobile Creator —<br>déroulé de la journée</h2>
+      <p class="section-sub" data-reveal>7h00, de 9h00 à 18h00, en deux séquences de 3h30 dans notre studio de Colombes.</p>
+
+      <div class="grid-auto stagger">
+        <div class="card" data-reveal>
+          <div class="card__body">
+            <div class="card__meta"><span>9h00 – 12h30</span></div>
+            <h3 class="card__title">Module 1 — Les bons réflexes</h3>
+            <p class="card__desc">Composition de l'image, équipements (micro, lumière, stabilisation), réglages caméra du smartphone, cadrages, mouvements, raccords & transitions, contrôle de la lumière et du son, écriture du synopsis et du pitch.</p>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <div class="card__body">
+            <div class="card__meta"><span>13h30 – 18h00</span></div>
+            <h3 class="card__title">Séquence 2 — Mise en situation & post-production</h3>
+            <p class="card__desc">Préparation d'un tournage (message, script, organisation, matériel), exercices pratiques (interview, reportage, vlog), montage simple (dérushage, musique, sous-titrage), export et diffusion sur les réseaux sociaux.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ CATALOGUES ════════════ -->
+  <section class="section catalogues" id="catalogues">
+    <div class="container">
 
       <span class="section-tag" data-reveal>Accès Orange</span>
       <h2 class="section-title" data-reveal>Nos catalogues<br>de formations</h2>
       <p class="section-sub" data-reveal>Accédez à l'ensemble des modules selon votre niveau d'accès. L'accès Orange débloque toutes les rubriques ci-dessous.</p>
 
-      <!-- VIGNETTE ACCÈS ORANGE -->
-      <div class="catalogue-vignette" data-reveal>
-        <div class="catalogue-vignette-icon">🟠</div>
-        <div class="catalogue-vignette-text">
+      <div class="vignette" data-reveal>
+        <div class="vignette__icon">🟠</div>
+        <div class="vignette__text">
           <h3>Accès Orange — Catalogue complet</h3>
           <p>6 rubriques · Vidéo, Audio, IA, Production, Creator, Photo</p>
         </div>
-        <div class="access-badge">⚡ Accès Orange</div>
+        <div class="vignette__badge">⚡ Accès Orange</div>
       </div>
 
-      <!-- TABS -->
       <div data-tabs>
-        <div class="tab-nav">
+        <div class="tabs__nav">
           <button class="tab-btn active" data-tab="video">🎬 Vidéo</button>
           <button class="tab-btn" data-tab="audio">🎙️ Audio</button>
           <button class="tab-btn" data-tab="ia">🤖 IA</button>
@@ -188,45 +200,45 @@
         <div class="tab-panel active" data-panel="video">
           <div class="cat-grid stagger">
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">🎨</div>
-              <div class="cat-card-body">
-                <h4>Colorimétrie</h4>
-                <p>Maîtriser l'étalonnage et la couleur en post-production</p>
+              <div class="cat-card__icon">🎨</div>
+              <div>
+                <p class="cat-card__title">Colorimétrie</p>
+                <p class="cat-card__desc">Étalonnage et gestion des couleurs en post-production</p>
               </div>
             </div>
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">🎭</div>
-              <div class="cat-card-body">
-                <h4>Comédien</h4>
-                <p>Direction d'acteurs et travail face caméra</p>
+              <div class="cat-card__icon">🎭</div>
+              <div>
+                <p class="cat-card__title">Comédien</p>
+                <p class="cat-card__desc">Direction d'acteurs et travail face caméra</p>
               </div>
             </div>
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">📋</div>
-              <div class="cat-card-body">
-                <h4>Intermittent</h4>
-                <p>Statut intermittent du spectacle, droits & démarches</p>
+              <div class="cat-card__icon">📋</div>
+              <div>
+                <p class="cat-card__title">Intermittent</p>
+                <p class="cat-card__desc">Statut intermittent du spectacle, droits & démarches</p>
               </div>
             </div>
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">📹</div>
-              <div class="cat-card-body">
-                <h4>Caméra</h4>
-                <p>Prise en main caméra pro, réglages et techniques de tournage</p>
+              <div class="cat-card__icon">📹</div>
+              <div>
+                <p class="cat-card__title">Caméra</p>
+                <p class="cat-card__desc">Prise en main caméra pro, réglages et techniques</p>
               </div>
             </div>
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">🎞️</div>
-              <div class="cat-card-body">
-                <h4>Chef Op.</h4>
-                <p>Direction de la photographie, lumière et cadre</p>
+              <div class="cat-card__icon">🎞️</div>
+              <div>
+                <p class="cat-card__title">Chef Op.</p>
+                <p class="cat-card__desc">Direction de la photographie, lumière et cadre</p>
               </div>
             </div>
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">👥</div>
-              <div class="cat-card-body">
-                <h4>Staff</h4>
-                <p>Organisation et gestion d'une équipe de tournage</p>
+              <div class="cat-card__icon">👥</div>
+              <div>
+                <p class="cat-card__title">Staff</p>
+                <p class="cat-card__desc">Organisation et gestion d'une équipe de tournage</p>
               </div>
             </div>
           </div>
@@ -236,17 +248,17 @@
         <div class="tab-panel" data-panel="audio">
           <div class="cat-grid stagger">
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">🎤</div>
-              <div class="cat-card-body">
-                <h4>Voix off</h4>
-                <p>Techniques de narration, enregistrement et diction pour la voix off</p>
+              <div class="cat-card__icon">🎤</div>
+              <div>
+                <p class="cat-card__title">Voix off</p>
+                <p class="cat-card__desc">Narration, enregistrement et diction professionnelle</p>
               </div>
             </div>
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">🔊</div>
-              <div class="cat-card-body">
-                <h4>Doublage</h4>
-                <p>Synchronisation labiale, adaptation et interprétation en doublage</p>
+              <div class="cat-card__icon">🔊</div>
+              <div>
+                <p class="cat-card__title">Doublage</p>
+                <p class="cat-card__desc">Synchronisation labiale, adaptation et interprétation</p>
               </div>
             </div>
           </div>
@@ -256,10 +268,10 @@
         <div class="tab-panel" data-panel="ia">
           <div class="cat-grid stagger">
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">✨</div>
-              <div class="cat-card-body">
-                <h4>Minimalisme IA</h4>
-                <p>Utiliser l'intelligence artificielle avec une approche minimaliste et efficace</p>
+              <div class="cat-card__icon">✨</div>
+              <div>
+                <p class="cat-card__title">Minimalisme IA</p>
+                <p class="cat-card__desc">Utiliser l'intelligence artificielle avec efficacité</p>
               </div>
             </div>
           </div>
@@ -269,24 +281,24 @@
         <div class="tab-panel" data-panel="prod">
           <div class="cat-grid stagger">
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">📋</div>
-              <div class="cat-card-body">
-                <h4>Régisseur</h4>
-                <p>Coordination de tournage, logistique et gestion de plateau</p>
+              <div class="cat-card__icon">📋</div>
+              <div>
+                <p class="cat-card__title">Régisseur</p>
+                <p class="cat-card__desc">Coordination de tournage, logistique et gestion de plateau</p>
               </div>
             </div>
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">🎯</div>
-              <div class="cat-card-body">
-                <h4>Shooting</h4>
-                <p>Organisation et direction d'un shooting photo ou vidéo</p>
+              <div class="cat-card__icon">🎯</div>
+              <div>
+                <p class="cat-card__title">Shooting</p>
+                <p class="cat-card__desc">Organisation et direction d'un shooting photo ou vidéo</p>
               </div>
             </div>
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">🗺️</div>
-              <div class="cat-card-body">
-                <h4>Feuille de route</h4>
-                <p>Créer et gérer une feuille de route de production complète</p>
+              <div class="cat-card__icon">🗺️</div>
+              <div>
+                <p class="cat-card__title">Feuille de route</p>
+                <p class="cat-card__desc">Créer et gérer une feuille de route de production</p>
               </div>
             </div>
           </div>
@@ -296,38 +308,38 @@
         <div class="tab-panel" data-panel="creator">
           <div class="cat-grid stagger">
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">▶️</div>
-              <div class="cat-card-body">
-                <h4>YouTube</h4>
-                <p>Créer, optimiser et développer sa chaîne YouTube</p>
+              <div class="cat-card__icon">▶️</div>
+              <div>
+                <p class="cat-card__title">YouTube</p>
+                <p class="cat-card__desc">Créer, optimiser et développer sa chaîne YouTube</p>
               </div>
             </div>
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">📡</div>
-              <div class="cat-card-body">
-                <h4>Émission Plateau</h4>
-                <p>Concevoir et réaliser une émission de plateau TV ou web</p>
+              <div class="cat-card__icon">📡</div>
+              <div>
+                <p class="cat-card__title">Émission Plateau</p>
+                <p class="cat-card__desc">Concevoir et réaliser une émission de plateau TV ou web</p>
               </div>
             </div>
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">🔴</div>
-              <div class="cat-card-body">
-                <h4>Live</h4>
-                <p>Maîtriser le streaming live : technique, animation et interaction</p>
+              <div class="cat-card__icon">🔴</div>
+              <div>
+                <p class="cat-card__title">Live</p>
+                <p class="cat-card__desc">Streaming live : technique, animation et interaction</p>
               </div>
             </div>
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">🎙️</div>
-              <div class="cat-card-body">
-                <h4>Organisation Plateau</h4>
-                <p>Organiser et coordonner un plateau de tournage ou émission</p>
+              <div class="cat-card__icon">🎙️</div>
+              <div>
+                <p class="cat-card__title">Organisation Plateau</p>
+                <p class="cat-card__desc">Coordonner un plateau de tournage ou émission</p>
               </div>
             </div>
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">🎬</div>
-              <div class="cat-card-body">
-                <h4>Production Creator</h4>
-                <p>Produire son contenu de A à Z comme un créateur professionnel</p>
+              <div class="cat-card__icon">🎬</div>
+              <div>
+                <p class="cat-card__title">Production Creator</p>
+                <p class="cat-card__desc">Produire son contenu de A à Z comme un pro</p>
               </div>
             </div>
           </div>
@@ -337,270 +349,346 @@
         <div class="tab-panel" data-panel="photo">
           <div class="cat-grid stagger">
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">🏃</div>
-              <div class="cat-card-body">
-                <h4>Photographe de sport</h4>
-                <p>Technique de prise de vue sportive, réactivité et mise en valeur du mouvement</p>
+              <div class="cat-card__icon">🏃</div>
+              <div>
+                <p class="cat-card__title">Photographe de sport</p>
+                <p class="cat-card__desc">Technique sportive, réactivité et mouvement</p>
               </div>
             </div>
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">📐</div>
-              <div class="cat-card-body">
-                <h4>Photo trépied</h4>
-                <p>Longues expositions, paysages et architectures avec trépied</p>
+              <div class="cat-card__icon">📐</div>
+              <div>
+                <p class="cat-card__title">Photo trépied</p>
+                <p class="cat-card__desc">Longues expositions, paysages et architectures</p>
               </div>
             </div>
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">🖼️</div>
-              <div class="cat-card-body">
-                <h4>Retouche photo</h4>
-                <p>Post-traitement, Lightroom & Photoshop pour sublimer vos photos</p>
+              <div class="cat-card__icon">🖼️</div>
+              <div>
+                <p class="cat-card__title">Retouche photo</p>
+                <p class="cat-card__desc">Post-traitement, Lightroom & Photoshop</p>
               </div>
             </div>
             <div class="cat-card" data-reveal>
-              <div class="cat-card-icon">💍</div>
-              <div class="cat-card-body">
-                <h4>Mariage & Événement</h4>
-                <p>Photographie de mariage, reportage événementiel et gestion du stress</p>
+              <div class="cat-card__icon">💍</div>
+              <div>
+                <p class="cat-card__title">Mariage & Événement</p>
+                <p class="cat-card__desc">Reportage événementiel, mariage et gestion du stress</p>
               </div>
             </div>
           </div>
         </div>
 
+      </div><!-- /data-tabs -->
+    </div>
+  </section>
+
+  <!-- ════════════ INTERVENANTS ════════════ -->
+  <section class="section" id="intervenants" style="background:var(--bg-2);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+      <span class="section-tag" data-reveal>À venir</span>
+      <h2 class="section-title" data-reveal>Nos formats<br>& intervenants</h2>
+      <p class="section-sub" data-reveal>D'autres formats encadrés par les talents du studio et des intervenants experts arrivent prochainement.</p>
+
+      <div class="grid-auto stagger">
+        <div class="card" data-reveal>
+          <div class="card__img" data-clip>
+            <span class="card__badge card__badge--ghost">Bientôt</span>
+            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&q=80" alt="Réalisation Pub">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span>🎬 Réalisation</span></div>
+            <h3 class="card__title">Réalisation Pub</h3>
+            <p class="card__desc">Avec Les Directors, James Maciver, Franck Allera.</p>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <div class="card__img" data-clip>
+            <span class="card__badge card__badge--ghost">Bientôt</span>
+            <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&q=80" alt="Réalisation Pub & Cinéma">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span>🎬 Réalisation</span></div>
+            <h3 class="card__title">Réalisation Pub & Cinéma</h3>
+            <p class="card__desc">Avec James Maciver.</p>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <div class="card__img" data-clip>
+            <span class="card__badge card__badge--ghost">Bientôt</span>
+            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80" alt="Réalisation YouTube / Clip">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span>🎬 Réalisation</span></div>
+            <h3 class="card__title">Réalisation YouTube / Clip</h3>
+            <p class="card__desc">Avec Mario Roudil.</p>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <div class="card__img" data-clip>
+            <span class="card__badge card__badge--ghost">Bientôt</span>
+            <img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=600&q=80" alt="Réalisation Fiction Horreur">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span>🎬 Réalisation</span></div>
+            <h3 class="card__title">Réalisation Fiction Horreur</h3>
+            <p class="card__desc">Avec Hugo Bréant.</p>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <div class="card__img" data-clip>
+            <span class="card__badge card__badge--ghost">Bientôt</span>
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=80" alt="Montage / Post-production">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span>✂️ Montage</span></div>
+            <h3 class="card__title">Montage / Post-production</h3>
+            <p class="card__desc">Avec Yann (Les Directors) et l'équipe Kotao.</p>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <div class="card__img" data-clip>
+            <span class="card__badge card__badge--ghost">Bientôt</span>
+            <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600&q=80" alt="Conception d'un podcast">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span>🎙️ Podcast</span></div>
+            <h3 class="card__title">Conception d'un podcast</h3>
+            <p class="card__desc">Avec Sylvain Tessier et Fabien Jousset.</p>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <div class="card__img" data-clip>
+            <span class="card__badge card__badge--ghost">Bientôt</span>
+            <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=600&q=80" alt="Plateau Show YouTube">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span>📺 Plateau</span></div>
+            <h3 class="card__title">Réalisation Plateau — Show YouTube</h3>
+            <p class="card__desc">Avec Picot et Florian (MVS).</p>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <div class="card__img" data-clip>
+            <span class="card__badge card__badge--ghost">Bientôt</span>
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80" alt="Les nouveaux outils IA">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span>🤖 IA</span></div>
+            <h3 class="card__title">Les nouveaux outils IA</h3>
+            <p class="card__desc">Avec Julien Cocquerel et Quentin Jubert.</p>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <div class="card__img" data-clip>
+            <span class="card__badge card__badge--ghost">Bientôt</span>
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=80" alt="Photographie">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span>📷 Photo</span></div>
+            <h3 class="card__title">Photographie</h3>
+            <p class="card__desc">Avec Guilhem Charreton.</p>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <div class="card__img" data-clip>
+            <span class="card__badge card__badge--ghost">Bientôt</span>
+            <img src="https://images.unsplash.com/photo-1601506521793-dc748fc80b67?w=600&q=80" alt="Chef Opérateur">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span>🎞️ Tournage</span></div>
+            <h3 class="card__title">Chef Opérateur</h3>
+            <p class="card__desc">Avec Nathan, Manu et Xavier.</p>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <div class="card__img" data-clip>
+            <span class="card__badge card__badge--ghost">Bientôt</span>
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=80" alt="Écrire son 1er film de genre">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span>✍️ Écriture</span></div>
+            <h3 class="card__title">Écrire son 1er film de genre</h3>
+            <p class="card__desc">Avec Hugo Bréant — <a href="mailto:guilhem@kotao-production.com" style="color:var(--accent)">contactez-nous</a>.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FORMATS & INTERVENANTS -->
-  <section class="section" id="intervenants" style="background:var(--dark2);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);max-width:100%;padding-left:0;padding-right:0;">
-   <div style="max-width:1300px;margin:0 auto;padding:0 4rem;">
-    <span class="section-tag" data-reveal>À venir</span>
-    <h2 class="section-title" data-reveal>Nos formats<br>& intervenants</h2>
-    <p class="section-sub" data-reveal>D'autres formats encadrés par les talents du studio et des intervenants experts arrivent prochainement.</p>
-
-    <div class="formations-grid stagger">
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip><span class="card-badge" style="background:var(--dark3);border:1px solid var(--orange);color:var(--orange)">Bientôt</span><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&q=80" alt="Réalisation Pub"></div>
-        <div class="card-body"><div class="card-meta"><span>🎬 Réalisation</span></div><h3>Réalisation Pub</h3><p>Avec Les Directors, James Maciver, Franck Allera.</p></div>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip><span class="card-badge" style="background:var(--dark3);border:1px solid var(--orange);color:var(--orange)">Bientôt</span><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&q=80" alt="Réalisation Pub & Cinéma"></div>
-        <div class="card-body"><div class="card-meta"><span>🎬 Réalisation</span></div><h3>Réalisation Pub & Cinéma</h3><p>Avec James Maciver.</p></div>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip><span class="card-badge" style="background:var(--dark3);border:1px solid var(--orange);color:var(--orange)">Bientôt</span><img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80" alt="Réalisation YouTube / Clip"></div>
-        <div class="card-body"><div class="card-meta"><span>🎬 Réalisation</span></div><h3>Réalisation YouTube / Clip</h3><p>Avec Mario Roudil.</p></div>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip><span class="card-badge" style="background:var(--dark3);border:1px solid var(--orange);color:var(--orange)">Bientôt</span><img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=600&q=80" alt="Réalisation Fiction Horreur"></div>
-        <div class="card-body"><div class="card-meta"><span>🎬 Réalisation</span></div><h3>Réalisation Fiction Horreur</h3><p>Avec Hugo Bréant.</p></div>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip><span class="card-badge" style="background:var(--dark3);border:1px solid var(--orange);color:var(--orange)">Bientôt</span><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=80" alt="Montage / Post-production"></div>
-        <div class="card-body"><div class="card-meta"><span>✂️ Montage</span></div><h3>Montage / Post-production</h3><p>Avec Yann (Les Directors) et l'équipe Kotao.</p></div>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip><span class="card-badge" style="background:var(--dark3);border:1px solid var(--orange);color:var(--orange)">Bientôt</span><img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600&q=80" alt="Conception d'un podcast"></div>
-        <div class="card-body"><div class="card-meta"><span>🎙️ Podcast</span></div><h3>Conception d'un podcast</h3><p>Avec Sylvain Tessier et Fabien Jousset.</p></div>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip><span class="card-badge" style="background:var(--dark3);border:1px solid var(--orange);color:var(--orange)">Bientôt</span><img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600&q=80" alt="Tournage Podcast"></div>
-        <div class="card-body"><div class="card-meta"><span>🎙️ Podcast</span></div><h3>Tournage Podcast</h3><p>Avec l'équipe Kotao.</p></div>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip><span class="card-badge" style="background:var(--dark3);border:1px solid var(--orange);color:var(--orange)">Bientôt</span><img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=600&q=80" alt="Réalisation Plateau — Show YouTube"></div>
-        <div class="card-body"><div class="card-meta"><span>📺 Plateau</span></div><h3>Réalisation Plateau — Show YouTube</h3><p>Avec Picot et Florian (MVS).</p></div>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip><span class="card-badge" style="background:var(--dark3);border:1px solid var(--orange);color:var(--orange)">Bientôt</span><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80" alt="Les nouveaux outils IA"></div>
-        <div class="card-body"><div class="card-meta"><span>🤖 IA</span></div><h3>Les nouveaux outils IA</h3><p>Avec Julien Cocquerel et Quentin Jubert.</p></div>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip><span class="card-badge" style="background:var(--dark3);border:1px solid var(--orange);color:var(--orange)">Bientôt</span><img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=600&q=80" alt="Production"></div>
-        <div class="card-body"><div class="card-meta"><span>🎥 Production</span></div><h3>Production</h3><p>Avec Guilhem Charreton.</p></div>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip><span class="card-badge" style="background:var(--dark3);border:1px solid var(--orange);color:var(--orange)">Bientôt</span><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=80" alt="Photographie"></div>
-        <div class="card-body"><div class="card-meta"><span>📷 Photo</span></div><h3>Photographie</h3><p>Avec Guilhem Charreton.</p></div>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip><span class="card-badge" style="background:var(--dark3);border:1px solid var(--orange);color:var(--orange)">Bientôt</span><img src="https://images.unsplash.com/photo-1551817958-d9d86fb29431?w=600&q=80" alt="Initiation à la vidéo"></div>
-        <div class="card-body"><div class="card-meta"><span>📱 Initiation</span></div><h3>Initiation à la vidéo (Caméra & Téléphone)</h3><p>Avec Guilhem Charreton et l'équipe Kotao.</p></div>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip><span class="card-badge" style="background:var(--dark3);border:1px solid var(--orange);color:var(--orange)">Bientôt</span><img src="https://images.unsplash.com/photo-1601506521793-dc748fc80b67?w=600&q=80" alt="Chef Opérateur"></div>
-        <div class="card-body"><div class="card-meta"><span>🎞️ Tournage</span></div><h3>Chef Opérateur</h3><p>Avec Nathan, Manu et Xavier.</p></div>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card-img" data-clip><span class="card-badge" style="background:var(--dark3);border:1px solid var(--orange);color:var(--orange)">Bientôt</span><img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=80" alt="Écrire son 1er film de genre"></div>
-        <div class="card-body"><div class="card-meta"><span>✍️ Écriture</span></div><h3>Écrire son 1er film de genre</h3><p>Avec Hugo Bréant — <a href="mailto:guilhem@kotao-production.com" style="color:var(--orange)">contactez-nous pour le planning</a>.</p></div>
+  <!-- ════════════ ABOUT ════════════ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about">
+        <div class="about__img-wrap" data-reveal-left>
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Studio Kotao" />
+          <div class="about__tag">
+            <div class="about__tag-icon">🏆</div>
+            <div class="about__tag-text">
+              <strong>19 ans d'expérience</strong>
+              <span>Studio Kotao Production</span>
+            </div>
+          </div>
+        </div>
+        <div class="about__content" data-reveal-right>
+          <span class="section-tag">À propos</span>
+          <h2 class="section-title">Apprenez avec ceux qui produisent</h2>
+          <p>Kotao Production est un studio audiovisuel basé à Colombes (92). Nous produisons des contenus pour des marques et institutions depuis 19 ans : des centaines de spots TV, campagnes digitales et créations de contenu, avec un studio de tournage intégré.</p>
+          <p><strong>Guilhem Charreton</strong> — Fondateur et producteur, diplômé Gobelins (2007), plus de 22 alternants et 45 stagiaires formés.</p>
+          <p><strong>Adrien Della Valle</strong> — Réalisateur et chef monteur, diplômé 3IS, 13 ans d'expérience en production TV et réseaux sociaux.</p>
+          <a href="#formations" class="btn btn-primary" style="margin-top:1.5rem">Découvrir les formations →</a>
+        </div>
       </div>
     </div>
-   </div>
   </section>
 
-  <!-- ABOUT -->
-  <div id="about">
-    <div class="about-split">
-      <div class="about-img-wrap" data-reveal-left>
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Studio Kotao" />
-        <div class="about-tag">
-          <div class="about-tag-icon">🏆</div>
-          <div class="about-tag-text">
-            <strong>19 ans d'expérience</strong>
-            <span>Studio Kotao Production</span>
-          </div>
-        </div>
-      </div>
-      <div data-reveal-right>
-        <span class="section-tag">À propos</span>
-        <h2 class="section-title">Apprenez avec ceux qui produisent</h2>
-        <p style="color:var(--gray);line-height:1.8;margin-bottom:1.5rem;">Kotao Production est un studio audiovisuel basé à Colombes (92). Nous produisons des contenus pour des marques et institutions depuis 19 ans : des centaines de spots TV, campagnes digitales et créations de contenu, avec un studio de tournage intégré.</p>
-        <p style="color:var(--gray);line-height:1.8;margin-bottom:1.5rem;"><strong style="color:var(--white)">Guilhem Charreton</strong> — Fondateur et producteur, diplômé Gobelins (2007), plus de 22 alternants et 45 stagiaires formés.</p>
-        <p style="color:var(--gray);line-height:1.8;margin-bottom:2.5rem;"><strong style="color:var(--white)">Adrien Della Valle</strong> — Réalisateur et chef monteur, diplômé 3IS, 13 ans d'expérience en production TV et réseaux sociaux.</p>
-        <a href="#formations" class="btn-primary">Découvrir les formations →</a>
-      </div>
-    </div>
-  </div>
+  <!-- ════════════ TÉMOIGNAGES ════════════ -->
+  <section class="section" id="temoignages" style="background:var(--bg-2);border-top:1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+      <span class="section-tag" data-reveal>Témoignages</span>
+      <h2 class="section-title" data-reveal>Ce que disent<br>les élèves</h2>
 
-  <!-- TÉMOIGNAGES -->
-  <section class="section" id="temoignages">
-    <span class="section-tag" data-reveal>Témoignages</span>
-    <h2 class="section-title" data-reveal>Ce que disent<br>les élèves</h2>
-
-    <div class="testi-grid stagger">
-      <div class="testi-card" data-reveal>
-        <div class="stars">★★★★★</div>
-        <p>"La formation Maîtrise ton Temps a complètement changé mon organisation. En 3 semaines j'ai repris 10h par semaine. Le contenu est dense mais hyper clair."</p>
-        <div class="testi-author">
-          <img class="avatar" src="https://i.pravatar.cc/80?img=5" alt="" />
-          <div>
-            <div class="author-name">Sophie M.</div>
-            <div class="author-role">Freelance designer</div>
+      <div class="testi-grid stagger">
+        <div class="testi-card" data-reveal>
+          <div class="testi-card__stars">★★★★★</div>
+          <p class="testi-card__quote">"La formation Maîtrise ton Temps a complètement changé mon organisation. En 3 semaines j'ai repris 10h par semaine. Le contenu est dense mais hyper clair."</p>
+          <div class="testi-card__author">
+            <img class="testi-card__avatar" src="https://i.pravatar.cc/80?img=5" alt="" />
+            <div>
+              <div class="testi-card__name">Sophie M.</div>
+              <div class="testi-card__role">Freelance designer</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="testi-card" data-reveal>
-        <div class="stars">★★★★★</div>
-        <p>"La formation IA & automatisation m'a permis de diviser par deux mon temps de travail. Des outils concrets, des cas pratiques réels. Je recommande à 100%."</p>
-        <div class="testi-author">
-          <img class="avatar" src="https://i.pravatar.cc/80?img=12" alt="" />
-          <div>
-            <div class="author-name">Thomas R.</div>
-            <div class="author-role">Consultant marketing</div>
+        <div class="testi-card" data-reveal>
+          <div class="testi-card__stars">★★★★★</div>
+          <p class="testi-card__quote">"La formation IA & automatisation m'a permis de diviser par deux mon temps de travail. Des outils concrets, des cas pratiques réels. Je recommande à 100%."</p>
+          <div class="testi-card__author">
+            <img class="testi-card__avatar" src="https://i.pravatar.cc/80?img=12" alt="" />
+            <div>
+              <div class="testi-card__name">Thomas R.</div>
+              <div class="testi-card__role">Consultant marketing</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="testi-card" data-reveal>
-        <div class="stars">★★★★★</div>
-        <p>"J'avais essayé plusieurs plateformes avant. Ici c'est différent : on va droit au but, sans blabla. J'ai monté mon e-commerce en moins de 2 mois."</p>
-        <div class="testi-author">
-          <img class="avatar" src="https://i.pravatar.cc/80?img=23" alt="" />
-          <div>
-            <div class="author-name">Lucas P.</div>
-            <div class="author-role">Entrepreneur e-commerce</div>
+        <div class="testi-card" data-reveal>
+          <div class="testi-card__stars">★★★★★</div>
+          <p class="testi-card__quote">"J'avais essayé plusieurs plateformes avant. Ici c'est différent : on va droit au but, sans blabla. J'ai monté mon e-commerce en moins de 2 mois."</p>
+          <div class="testi-card__author">
+            <img class="testi-card__avatar" src="https://i.pravatar.cc/80?img=23" alt="" />
+            <div>
+              <div class="testi-card__name">Lucas P.</div>
+              <div class="testi-card__role">Entrepreneur e-commerce</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TARIFS -->
+  <!-- ════════════ TARIFS ════════════ -->
   <section class="section" id="tarifs">
-    <span class="section-tag" data-reveal>Tarifs</span>
-    <h2 class="section-title" data-reveal>Une formation,<br>un tarif clair</h2>
-    <p class="section-sub" data-reveal>Formation en présentiel dans notre studio de Colombes (92), dès 1 participant.</p>
+    <div class="container">
+      <span class="section-tag" data-reveal>Tarifs</span>
+      <h2 class="section-title" data-reveal>Une formation,<br>un tarif clair</h2>
+      <p class="section-sub" data-reveal>Formation en présentiel dans notre studio de Colombes (92), dès 1 participant.</p>
 
-    <div class="pricing-grid stagger">
-      <div class="price-card featured" data-reveal>
-        <div class="popular-badge">⚡ Bestseller</div>
-        <div class="plan-name">Mobile Creator</div>
-        <div class="plan-price">700€ <span>HT</span></div>
-        <div class="plan-desc">1 jour · 7h en studio · Mai-Juin 2026</div>
-        <ul class="plan-features">
-          <li>Tournage, montage & diffusion au smartphone</li>
-          <li>Set de tournage complet (caméra, lumière, son)</li>
-          <li>Encadrement par 2 formateurs experts</li>
-          <li>Évaluation QCM + attestation de fin de formation</li>
-          <li>Accessible aux personnes en situation de handicap</li>
-        </ul>
-        <a href="mailto:guilhem@kotao-production.com" class="btn-plan btn-plan-main">Réserver ma place</a>
-      </div>
+      <div class="pricing-grid stagger">
+        <div class="price-card price-card--featured" data-reveal>
+          <div class="price-card__popular">⚡ Bestseller</div>
+          <div class="price-card__name">Mobile Creator</div>
+          <div class="price-card__amount">700€ <span>HT</span></div>
+          <div class="price-card__desc">1 jour · 7h en studio · Mai-Juin 2026</div>
+          <ul class="price-card__features">
+            <li>Tournage, montage & diffusion au smartphone</li>
+            <li>Set de tournage complet (caméra, lumière, son)</li>
+            <li>Encadrement par 2 formateurs experts</li>
+            <li>Évaluation QCM + attestation de fin de formation</li>
+            <li>Accessible aux personnes en situation de handicap</li>
+          </ul>
+          <a href="mailto:guilhem@kotao-production.com" class="btn-plan btn-plan--solid">Réserver ma place</a>
+        </div>
 
-      <div class="price-card" data-reveal>
-        <div class="plan-name">Creator Video</div>
-        <div class="plan-price">Sur devis</div>
-        <div class="plan-desc">1 jour · studio + tournage caméra pro</div>
-        <ul class="plan-features">
-          <li>Immersion studio & écriture du pitch</li>
-          <li>Tournage Sony FX3 / Black Magic 6K</li>
-          <li>Post-production CapCut / Premiere</li>
-          <li>Analyse, débrief & QCM final</li>
-          <li>Échange préalable de 30 min avec l'équipe</li>
-        </ul>
-        <a href="mailto:guilhem@kotao-production.com" class="btn-plan btn-plan-outline">Demander un devis</a>
+        <div class="price-card" data-reveal>
+          <div class="price-card__name">Creator Video</div>
+          <div class="price-card__amount">Sur devis</div>
+          <div class="price-card__desc">1 jour · studio + tournage caméra pro</div>
+          <ul class="price-card__features">
+            <li>Immersion studio & écriture du pitch</li>
+            <li>Tournage Sony FX3 / Black Magic 6K</li>
+            <li>Post-production CapCut / Premiere</li>
+            <li>Analyse, débrief & QCM final</li>
+            <li>Échange préalable de 30 min avec l'équipe</li>
+          </ul>
+          <a href="mailto:guilhem@kotao-production.com" class="btn-plan btn-plan--outline">Demander un devis</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section">
-    <span class="section-tag" data-reveal>FAQ</span>
-    <h2 class="section-title" style="text-align:center" data-reveal>Questions fréquentes</h2>
+  <!-- ════════════ FAQ ════════════ -->
+  <section class="section" style="background:var(--bg-2);border-top:1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+      <span class="section-tag" data-reveal>FAQ</span>
+      <h2 class="section-title" style="text-align:center" data-reveal>Questions fréquentes</h2>
 
-    <div class="faq-list" data-reveal>
-      <div class="faq-item">
-        <button class="faq-question">
-          Faut-il avoir du matériel ou un niveau particulier ?
-          <span class="faq-arrow">↓</span>
-        </button>
-        <div class="faq-answer">Avoir une base ou une passion pour la communication, les réseaux sociaux, la culture ou les médias suffit. Apporte simplement ton smartphone, le reste du matériel (caméra, lumière, micros) est fourni en studio.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          À qui s'adresse cette formation ?
-          <span class="faq-arrow">↓</span>
-        </button>
-        <div class="faq-answer">Communicants, CEO, start-up, comédiens, freelances média, étudiants ou personnes en reconversion : la formation Mobile Creator est ouverte à tout profil souhaitant devenir autonome dans sa production vidéo.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          Où se déroule la formation ?
-          <span class="faq-arrow">↓</span>
-        </button>
-        <div class="faq-answer">Dans notre studio de tournage intégré, au 73 boulevard Charles de Gaulle, 92700 Colombes. La formation peut se faire à partir d'un seul élève.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          Comment se déroule l'évaluation ?
-          <span class="faq-arrow">↓</span>
-        </button>
-        <div class="faq-answer">Évaluation diagnostique en début de journée, ateliers pratiques notés sur grille critériée, étude de cas finale et QCM. Une attestation de fin de formation t'est remise à l'issue.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          La formation est-elle accessible aux personnes en situation de handicap ?
-          <span class="faq-arrow">↓</span>
-        </button>
-        <div class="faq-answer">Oui, notre studio est accessible aux personnes en situation de handicap. Contacte-nous en amont pour étudier les adaptations possibles et faciliter ta participation.</div>
+      <div class="faq" data-reveal>
+        <div class="faq__item">
+          <button class="faq__question">
+            Faut-il avoir du matériel ou un niveau particulier ?
+            <span class="faq__arrow">↓</span>
+          </button>
+          <div class="faq__answer">Avoir une base ou une passion pour la communication, les réseaux sociaux, la culture ou les médias suffit. Apporte simplement ton smartphone, le reste du matériel (caméra, lumière, micros) est fourni en studio.</div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question">
+            À qui s'adresse cette formation ?
+            <span class="faq__arrow">↓</span>
+          </button>
+          <div class="faq__answer">Communicants, CEO, start-up, comédiens, freelances média, étudiants ou personnes en reconversion : la formation Mobile Creator est ouverte à tout profil souhaitant devenir autonome dans sa production vidéo.</div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question">
+            Où se déroule la formation ?
+            <span class="faq__arrow">↓</span>
+          </button>
+          <div class="faq__answer">Dans notre studio de tournage intégré, au 73 boulevard Charles de Gaulle, 92700 Colombes. La formation peut se faire à partir d'un seul élève.</div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question">
+            Comment se déroule l'évaluation ?
+            <span class="faq__arrow">↓</span>
+          </button>
+          <div class="faq__answer">Évaluation diagnostique en début de journée, ateliers pratiques notés sur grille critériée, étude de cas finale et QCM. Une attestation de fin de formation t'est remise à l'issue.</div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question">
+            La formation est-elle accessible aux personnes en situation de handicap ?
+            <span class="faq__arrow">↓</span>
+          </button>
+          <div class="faq__answer">Oui, notre studio est accessible aux personnes en situation de handicap. Contacte-nous en amont pour étudier les adaptations possibles et faciliter ta participation.</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
-  <div class="cta-section">
+  <!-- ════════════ CTA ════════════ -->
+  <div class="cta">
+    <div class="cta__glow"></div>
     <h2 data-reveal>Prêt à devenir<br>autonome en vidéo ?</h2>
     <p data-reveal>Réserve un échange de 30 min avec l'équipe Kotao pour valider ton projet.</p>
     <div data-reveal>
-      <a href="mailto:guilhem@kotao-production.com" class="btn-primary" style="font-size:1.1rem;padding:1.1rem 2.5rem;">Réserver un entretien →</a>
+      <a href="mailto:guilhem@kotao-production.com" class="btn btn-primary" style="font-size:1.05rem;padding:1.1rem 2.5rem;">
+        Réserver un entretien →
+      </a>
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="logo">Kotao<span>.</span>Academy</div>
-    <p>© 2026 Kotao Production · Colombes 92700 · guilhem@kotao-production.com · +33 6 13 61 36 64</p>
-    <p style="font-size:0.8rem;">kotao-production.com</p>
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer class="footer">
+    <a href="#" class="nav__logo">Kotao<span>.</span>Academy</a>
+    <p class="footer__copy">© 2026 Kotao Production · Colombes 92700 · guilhem@kotao-production.com · +33 6 13 61 36 64</p>
+    <p class="footer__domain">kotao-production.com</p>
   </footer>
 
   <script src="script.js"></script>
