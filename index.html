@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Kotao Academy — Formations audiovisuelles professionnelles en studio à Colombes (92). Vidéo, audio, IA, production, créateur de contenu, photo." />
   <title>Kotao Academy — Formations Audiovisuelles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,8 +21,13 @@
       <li><a href="#intervenants">Intervenants</a></li>
       <li><a href="#about">À propos</a></li>
       <li><a href="#tarifs">Tarifs</a></li>
-      <li><a href="#tarifs" class="nav__cta">Réserver →</a></li>
+      <li><a href="reservation.html?formation=mobile" class="nav__cta">Réserver →</a></li>
     </ul>
+    <button class="nav__burger" aria-label="Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <!-- ════════════ HERO ════════════ -->
@@ -37,6 +45,10 @@
     <div class="hero__actions">
       <a href="#formations" class="btn btn-primary">Voir la formation</a>
       <a href="#about"      class="btn btn-ghost">En savoir plus</a>
+    </div>
+
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <div class="hero__scroll-line"></div>
     </div>
 
     <div class="hero__stats">
@@ -103,7 +115,7 @@
 
         <div class="card" data-reveal>
           <div class="card__img" data-clip>
-            <img src="https://images.unsplash.com/photo-1551817958-d9d86fb29431?w=600&q=80" alt="Mobile Creator" />
+            <img src="images/formations/mobile-creator.jpg" alt="Mobile Creator" loading="lazy" />
             <span class="card__badge">Bestseller</span>
           </div>
           <div class="card__body">
@@ -122,7 +134,7 @@
 
         <div class="card" data-reveal>
           <div class="card__img" data-clip>
-            <img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=600&q=80" alt="Creator Video" />
+            <img src="images/formations/creator-video.jpg" alt="Creator Video" loading="lazy" />
             <span class="card__badge">Nouveau</span>
           </div>
           <div class="card__body">
@@ -161,7 +173,7 @@
         <div class="card" data-reveal>
           <div class="card__body">
             <div class="card__meta"><span>13h30 – 18h00</span></div>
-            <h3 class="card__title">Séquence 2 — Mise en situation & post-production</h3>
+            <h3 class="card__title">Module 2 — Mise en situation & post-production</h3>
             <p class="card__desc">Préparation d'un tournage (message, script, organisation, matériel), exercices pratiques (interview, reportage, vlog), montage simple (dérushage, musique, sous-titrage), export et diffusion sur les réseaux sociaux.</p>
           </div>
         </div>
@@ -394,7 +406,7 @@
         <div class="card" data-reveal>
           <div class="card__img" data-clip>
             <span class="card__badge card__badge--ghost">Bientôt</span>
-            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&q=80" alt="Réalisation Pub">
+            <img src="images/intervenants/realisation-pub.jpg" alt="Réalisation Pub" loading="lazy">
           </div>
           <div class="card__body">
             <div class="card__meta"><span>🎬 Réalisation</span></div>
@@ -405,7 +417,7 @@
         <div class="card" data-reveal>
           <div class="card__img" data-clip>
             <span class="card__badge card__badge--ghost">Bientôt</span>
-            <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&q=80" alt="Réalisation Pub & Cinéma">
+            <img src="images/intervenants/realisation-pub-cinema.jpg" alt="Réalisation Pub & Cinéma" loading="lazy">
           </div>
           <div class="card__body">
             <div class="card__meta"><span>🎬 Réalisation</span></div>
@@ -416,7 +428,7 @@
         <div class="card" data-reveal>
           <div class="card__img" data-clip>
             <span class="card__badge card__badge--ghost">Bientôt</span>
-            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80" alt="Réalisation YouTube / Clip">
+            <img src="images/intervenants/youtube-clip.jpg" alt="Réalisation YouTube / Clip" loading="lazy">
           </div>
           <div class="card__body">
             <div class="card__meta"><span>🎬 Réalisation</span></div>
@@ -427,7 +439,7 @@
         <div class="card" data-reveal>
           <div class="card__img" data-clip>
             <span class="card__badge card__badge--ghost">Bientôt</span>
-            <img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=600&q=80" alt="Réalisation Fiction Horreur">
+            <img src="images/intervenants/fiction-horreur.jpg" alt="Réalisation Fiction Horreur" loading="lazy">
           </div>
           <div class="card__body">
             <div class="card__meta"><span>🎬 Réalisation</span></div>
@@ -438,7 +450,7 @@
         <div class="card" data-reveal>
           <div class="card__img" data-clip>
             <span class="card__badge card__badge--ghost">Bientôt</span>
-            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=80" alt="Montage / Post-production">
+            <img src="images/intervenants/montage.jpg" alt="Montage / Post-production" loading="lazy">
           </div>
           <div class="card__body">
             <div class="card__meta"><span>✂️ Montage</span></div>
@@ -449,7 +461,7 @@
         <div class="card" data-reveal>
           <div class="card__img" data-clip>
             <span class="card__badge card__badge--ghost">Bientôt</span>
-            <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600&q=80" alt="Conception d'un podcast">
+            <img src="images/intervenants/podcast.jpg" alt="Conception d'un podcast" loading="lazy">
           </div>
           <div class="card__body">
             <div class="card__meta"><span>🎙️ Podcast</span></div>
@@ -460,7 +472,7 @@
         <div class="card" data-reveal>
           <div class="card__img" data-clip>
             <span class="card__badge card__badge--ghost">Bientôt</span>
-            <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=600&q=80" alt="Plateau Show YouTube">
+            <img src="images/intervenants/plateau-youtube.jpg" alt="Plateau Show YouTube" loading="lazy">
           </div>
           <div class="card__body">
             <div class="card__meta"><span>📺 Plateau</span></div>
@@ -471,7 +483,7 @@
         <div class="card" data-reveal>
           <div class="card__img" data-clip>
             <span class="card__badge card__badge--ghost">Bientôt</span>
-            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80" alt="Les nouveaux outils IA">
+            <img src="images/intervenants/outils-ia.jpg" alt="Les nouveaux outils IA" loading="lazy">
           </div>
           <div class="card__body">
             <div class="card__meta"><span>🤖 IA</span></div>
@@ -482,7 +494,7 @@
         <div class="card" data-reveal>
           <div class="card__img" data-clip>
             <span class="card__badge card__badge--ghost">Bientôt</span>
-            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=80" alt="Photographie">
+            <img src="images/intervenants/photographie.jpg" alt="Photographie" loading="lazy">
           </div>
           <div class="card__body">
             <div class="card__meta"><span>📷 Photo</span></div>
@@ -493,7 +505,7 @@
         <div class="card" data-reveal>
           <div class="card__img" data-clip>
             <span class="card__badge card__badge--ghost">Bientôt</span>
-            <img src="https://images.unsplash.com/photo-1601506521793-dc748fc80b67?w=600&q=80" alt="Chef Opérateur">
+            <img src="images/intervenants/chef-operateur.jpg" alt="Chef Opérateur" loading="lazy">
           </div>
           <div class="card__body">
             <div class="card__meta"><span>🎞️ Tournage</span></div>
@@ -504,7 +516,7 @@
         <div class="card" data-reveal>
           <div class="card__img" data-clip>
             <span class="card__badge card__badge--ghost">Bientôt</span>
-            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=80" alt="Écrire son 1er film de genre">
+            <img src="images/intervenants/ecriture.jpg" alt="Écrire son 1er film de genre" loading="lazy">
           </div>
           <div class="card__body">
             <div class="card__meta"><span>✍️ Écriture</span></div>
@@ -521,7 +533,7 @@
     <div class="container">
       <div class="about">
         <div class="about__img-wrap" data-reveal-left>
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Studio Kotao" />
+          <img src="images/about/studio-kotao.jpg" alt="Studio Kotao" loading="lazy" />
           <div class="about__tag">
             <div class="about__tag-icon">🏆</div>
             <div class="about__tag-text">
@@ -551,34 +563,34 @@
       <div class="testi-grid stagger">
         <div class="testi-card" data-reveal>
           <div class="testi-card__stars">★★★★★</div>
-          <p class="testi-card__quote">"La formation Maîtrise ton Temps a complètement changé mon organisation. En 3 semaines j'ai repris 10h par semaine. Le contenu est dense mais hyper clair."</p>
+          <p class="testi-card__quote">"En une journée au studio Kotao, j'ai filmé, monté et publié une vidéo pro avec mon iPhone. Les formateurs vont droit au but. Je repars avec des réflexes concrets que j'utilise dès le lendemain."</p>
           <div class="testi-card__author">
             <img class="testi-card__avatar" src="https://i.pravatar.cc/80?img=5" alt="" />
             <div>
               <div class="testi-card__name">Sophie M.</div>
-              <div class="testi-card__role">Freelance designer</div>
+              <div class="testi-card__role">Communicante RSE</div>
             </div>
           </div>
         </div>
         <div class="testi-card" data-reveal>
           <div class="testi-card__stars">★★★★★</div>
-          <p class="testi-card__quote">"La formation IA & automatisation m'a permis de diviser par deux mon temps de travail. Des outils concrets, des cas pratiques réels. Je recommande à 100%."</p>
+          <p class="testi-card__quote">"La formation Mobile Creator m'a tout de suite donné les clés pour créer du contenu LinkedIn de qualité pro. Guilhem et Adrien transmettent vraiment leur savoir-faire, c'est du concret, pas de la théorie."</p>
           <div class="testi-card__author">
             <img class="testi-card__avatar" src="https://i.pravatar.cc/80?img=12" alt="" />
             <div>
               <div class="testi-card__name">Thomas R.</div>
-              <div class="testi-card__role">Consultant marketing</div>
+              <div class="testi-card__role">Fondateur startup</div>
             </div>
           </div>
         </div>
         <div class="testi-card" data-reveal>
           <div class="testi-card__stars">★★★★★</div>
-          <p class="testi-card__quote">"J'avais essayé plusieurs plateformes avant. Ici c'est différent : on va droit au but, sans blabla. J'ai monté mon e-commerce en moins de 2 mois."</p>
+          <p class="testi-card__quote">"Avant la formation, mes vidéos terrain manquaient de qualité. Après Mobile Creator, j'ai les bons réflexes : cadrage, son, montage. Le studio est impressionnant, l'ambiance est top."</p>
           <div class="testi-card__author">
             <img class="testi-card__avatar" src="https://i.pravatar.cc/80?img=23" alt="" />
             <div>
               <div class="testi-card__name">Lucas P.</div>
-              <div class="testi-card__role">Entrepreneur e-commerce</div>
+              <div class="testi-card__role">Journaliste indépendant</div>
             </div>
           </div>
         </div>
@@ -598,7 +610,7 @@
           <div class="price-card__popular">⚡ Bestseller</div>
           <div class="price-card__name">Mobile Creator</div>
           <div class="price-card__amount">700€ <span>HT</span></div>
-          <div class="price-card__desc">1 jour · 7h en studio · Mai-Juin 2026</div>
+          <div class="price-card__desc">1 jour · 7h en studio · Juillet-Août 2026</div>
           <ul class="price-card__features">
             <li>Tournage, montage & diffusion au smartphone</li>
             <li>Set de tournage complet (caméra, lumière, son)</li>
@@ -606,7 +618,7 @@
             <li>Évaluation QCM + attestation de fin de formation</li>
             <li>Accessible aux personnes en situation de handicap</li>
           </ul>
-          <a href="mailto:guilhem@kotao-production.com" class="btn-plan btn-plan--solid">Réserver ma place</a>
+          <a href="reservation.html?formation=mobile" class="btn-plan btn-plan--solid">Réserver ma place</a>
         </div>
 
         <div class="price-card" data-reveal>
@@ -620,7 +632,7 @@
             <li>Analyse, débrief & QCM final</li>
             <li>Échange préalable de 30 min avec l'équipe</li>
           </ul>
-          <a href="mailto:guilhem@kotao-production.com" class="btn-plan btn-plan--outline">Demander un devis</a>
+          <a href="reservation.html?formation=creator" class="btn-plan btn-plan--outline">Demander un devis</a>
         </div>
       </div>
     </div>
@@ -686,10 +698,47 @@
 
   <!-- ════════════ FOOTER ════════════ -->
   <footer class="footer">
-    <a href="#" class="nav__logo">Kotao<span>.</span>Academy</a>
-    <p class="footer__copy">© 2026 Kotao Production · Colombes 92700 · guilhem@kotao-production.com · +33 6 13 61 36 64</p>
-    <p class="footer__domain">kotao-production.com</p>
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <a href="#" class="nav__logo">Kotao<span>.</span>Academy</a>
+          <p class="footer__tagline">Formations audiovisuelles professionnelles en studio à Colombes (92).</p>
+          <a href="reservation.html?formation=mobile" class="btn btn-primary footer__cta">Réserver une place →</a>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__list">
+            <li><a href="#formations">Formations</a></li>
+            <li><a href="#catalogues">Catalogue</a></li>
+            <li><a href="#intervenants">Intervenants</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#tarifs">Tarifs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <ul class="footer__list">
+            <li><a href="mailto:guilhem@kotao-production.com">guilhem@kotao-production.com</a></li>
+            <li><a href="tel:+33613613664">+33 6 13 61 36 64</a></li>
+            <li>73 bd Charles de Gaulle<br>92700 Colombes</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Kotao Production · Tous droits réservés</p>
+        <a href="https://kotao-production.com" class="footer__domain" target="_blank" rel="noopener">kotao-production.com ↗</a>
+      </div>
+    </div>
   </footer>
+
+  <!-- CTA fixe mobile -->
+  <div class="mobile-sticky-cta" id="mobileCta" aria-hidden="true">
+    <a href="reservation.html?formation=mobile" class="btn btn-primary">Réserver ma place →</a>
+  </div>
 
   <script src="script.js"></script>
 </body>

@@ -25,13 +25,62 @@ document.querySelectorAll('.faq__question').forEach(btn => {
   });
 });
 
-/* ─── NAV SCROLL EFFECT ─── */
+/* ─── NAV SCROLL EFFECT + ACTIVE STATE ─── */
 const nav = document.querySelector('.nav');
+
 window.addEventListener('scroll', () => {
   nav.style.borderBottomColor = window.scrollY > 60
     ? 'rgba(209,254,23,0.12)'
     : 'rgba(255,255,255,0.05)';
 }, { passive: true });
+
+// Surligne le lien nav correspondant à la section visible
+const sectionIds = ['formations', 'catalogues', 'intervenants', 'about', 'tarifs'];
+const navLinkMap = {};
+sectionIds.forEach(id => {
+  const link = document.querySelector(`.nav__links a[href="#${id}"]`);
+  if (link) navLinkMap[id] = link;
+});
+
+const activeSectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      Object.values(navLinkMap).forEach(l => l.classList.remove('active'));
+      const id = entry.target.id;
+      if (navLinkMap[id]) navLinkMap[id].classList.add('active');
+    }
+  });
+}, { threshold: 0.35 });
+
+sectionIds.forEach(id => {
+  const el = document.getElementById(id);
+  if (el) activeSectionObserver.observe(el);
+});
+
+/* ─── MOBILE CTA — masqué quand menu ouvert ─── */
+const mobileCta = document.getElementById('mobileCta');
+
+/* ─── MOBILE NAV ─── */
+const burger = document.querySelector('.nav__burger');
+const navLinks = document.querySelector('.nav__links');
+if (burger && navLinks) {
+  burger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    if (mobileCta) mobileCta.style.display = isOpen ? 'none' : '';
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      if (mobileCta) mobileCta.style.display = '';
+    });
+  });
+}
 
 /* ─── CATALOGUE TABS ─── */
 document.querySelectorAll('[data-tabs]').forEach(container => {
