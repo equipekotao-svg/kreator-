@@ -370,6 +370,126 @@ a  { text-decoration: none; }
 }
 
 /* ════════════════════════════════════════════
+   SEARCH BAR — "Je cherche ma formation"
+   ════════════════════════════════════════════ */
+.search-bar {
+  background: var(--bg-2);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 1.6rem 0;
+  position: sticky;
+  top: 61px;
+  z-index: 150;
+  backdrop-filter: blur(12px);
+}
+
+.search-bar__inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.search-bar__title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+}
+.search-bar__title strong { font-weight: 900; }
+
+.search-bar__filters {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+/* Input recherche */
+.search-input-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+.search-icon {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px; height: 16px;
+  color: var(--muted);
+  pointer-events: none;
+}
+.search-input {
+  background: var(--bg-3);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: var(--radius-pill);
+  color: var(--white);
+  padding: 0.55rem 1.1rem 0.55rem 2.4rem;
+  font-size: 0.82rem;
+  font-family: inherit;
+  width: 210px;
+  transition: border-color 0.2s, width 0.3s var(--ease);
+}
+.search-input::placeholder { color: var(--muted); }
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  width: 260px;
+}
+
+/* Selects */
+.search-filter {
+  background: var(--bg-3);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: var(--radius-pill);
+  color: rgba(255,255,255,0.75);
+  padding: 0.55rem 2rem 0.55rem 1.1rem;
+  font-size: 0.82rem;
+  font-family: inherit;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23888' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+}
+.search-filter:focus { outline: none; border-color: var(--accent); }
+.search-filter.active {
+  border-color: rgba(209,254,23,0.5);
+  background-color: rgba(209,254,23,0.07);
+  color: var(--accent);
+}
+
+/* Compteur + reset */
+.search-bar__right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+.search-reset {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.search-reset:hover { color: var(--accent); }
+.search-count {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.search-count span { color: var(--white); }
+
+/* ════════════════════════════════════════════
    FEATURES STRIP
    ════════════════════════════════════════════ */
 .strip {
@@ -970,6 +1090,13 @@ a  { text-decoration: none; }
     padding: 0.8rem 2rem !important;
     border-radius: var(--radius-sm) !important;
   }
+  .search-bar { top: 57px; padding: 1rem 0; }
+  .search-bar__title { font-size: 1rem; }
+  .search-bar__inner { gap: 0.8rem; }
+  .search-bar__filters { gap: 0.5rem; }
+  .search-input { width: 100%; }
+  .search-input:focus { width: 100%; }
+  .search-bar__right { margin-left: 0; }
   .section { padding: 5rem 0; }
   .strip { padding: 4rem 0; }
   .hero { padding: 8rem 1.5rem 4rem; }

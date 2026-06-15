@@ -104,6 +104,54 @@
     </div>
   </div>
 
+  <!-- ════════════ SEARCH BAR ════════════ -->
+  <div class="search-bar" id="searchBar">
+    <div class="container">
+      <div class="search-bar__inner">
+
+        <div class="search-bar__title">
+          <strong>Je cherche</strong> ma formation
+        </div>
+
+        <div class="search-bar__filters">
+
+          <div class="search-input-wrap">
+            <svg class="search-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <input class="search-input" id="searchKeyword" type="text" placeholder="Recherche par mots clés" />
+          </div>
+
+          <select class="search-filter" id="filterThematique">
+            <option value="">Thématique</option>
+            <option value="video">🎬 Vidéo</option>
+            <option value="audio">🎙️ Audio</option>
+            <option value="ia">🤖 IA</option>
+            <option value="prod">🎞️ Production</option>
+            <option value="creator">📺 Creator</option>
+            <option value="photo">📷 Photo</option>
+          </select>
+
+          <select class="search-filter" id="filterFormat">
+            <option value="">Format</option>
+            <option value="studio">En studio</option>
+            <option value="terrain">Studio + terrain</option>
+          </select>
+
+          <select class="search-filter" id="filterBudget">
+            <option value="">Budget</option>
+            <option value="fixe">Tarif fixe (700€)</option>
+            <option value="devis">Sur devis</option>
+          </select>
+
+          <div class="search-bar__right">
+            <button class="search-reset" id="searchReset">↺ Réinitialiser</button>
+            <span class="search-count" id="searchCount">2 formations disponibles</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ════════════ FORMATIONS ════════════ -->
   <section class="section" id="formations">
     <div class="container">
