@@ -336,6 +336,117 @@
     .faq-abody { padding: 0 0.9rem 0.8rem; }
     .faq-abody textarea { min-height: 56px; }
 
+    /* ── PHOTO GRID ── */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    .photo-group-label {
+      grid-column: 1 / -1;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 0.5rem;
+      margin-bottom: -0.1rem;
+    }
+    .photo-card {
+      background: var(--bg-2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .photo-card.changed { border-color: rgba(74,222,128,0.35); }
+
+    .photo-thumb {
+      position: relative;
+      height: 130px;
+      background: var(--bg-3);
+      overflow: hidden;
+    }
+    .photo-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.25s;
+    }
+    .photo-thumb img.loading { opacity: 0.3; }
+    .photo-badge {
+      position: absolute;
+      top: 0.4rem; right: 0.4rem;
+      background: var(--green);
+      color: #000;
+      font-size: 0.58rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 100px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .photo-card.changed .photo-badge { opacity: 1; }
+
+    .photo-info {
+      padding: 0.6rem 0.75rem;
+    }
+    .photo-name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .photo-path {
+      font-size: 0.6rem;
+      color: var(--muted);
+      font-family: 'Courier New', monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 0.5rem;
+    }
+    .btn-change {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      width: 100%;
+      padding: 0.42rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-change:hover { background: rgba(209,254,23,0.07); border-color: rgba(209,254,23,0.25); color: var(--accent); }
+    .photo-card.changed .btn-change { border-color: rgba(74,222,128,0.3); color: var(--green); }
+
+    .photo-dl-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1.1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--bg-2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+    }
+    .photo-dl-count {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .photo-dl-count strong { color: var(--white); }
+
     /* ── TOAST ── */
     @keyframes toastIn { from { opacity:0; transform: translateY(-8px); } to { opacity:1; transform:none; } }
     .toast {
@@ -360,8 +471,14 @@
       .c3, .c4 { grid-template-columns: 1fr 1fr; }
       .form-cards { grid-template-columns: 1fr; }
       .btn-ghost { display: none; }
+      .photo-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 420px) {
+      .photo-grid { grid-template-columns: 1fr; }
     }
   </style>
+  <!-- JSZip pour téléchargement groupé des photos -->
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 </head>
 <body>
 
@@ -390,6 +507,21 @@
     <strong>Comment ça marche :</strong> modifie le contenu dans les sections ci-dessous →
     clique sur <strong>Prévisualiser</strong> pour voir le résultat → clique sur <strong>Télécharger index.html</strong>
     pour récupérer le fichier → remplace <code>index.html</code> dans le dossier du site → fais un <strong>git push</strong>.
+  </div>
+
+  <!-- ── PHOTOS ── -->
+  <div class="asec" id="s-photos">
+    <div class="asec-head" onclick="toggle('s-photos')">
+      <div class="asec-title"><div class="asec-icon">🖼</div> Photos du site</div>
+      <span class="asec-chev">▼</span>
+    </div>
+    <div class="asec-body">
+      <div class="photo-grid" id="photoGrid"></div>
+      <div class="photo-dl-bar" id="photoDlBar" style="display:none">
+        <span class="photo-dl-count" id="photoCount"><strong>0</strong> photo modifiée</span>
+        <button class="btn btn-accent" id="photosDlBtn" onclick="downloadPhotos()">↓ Télécharger les photos (ZIP)</button>
+      </div>
+    </div>
   </div>
 
   <!-- ── SESSIONS ── -->
@@ -915,7 +1047,131 @@ function toast(msg) {
   setTimeout(() => el.remove(), 3000);
 }
 
+/* ════════════════════════════════════════════
+   PHOTOS
+   ════════════════════════════════════════════ */
+
+const PHOTOS = [
+  // Groupe : Formations
+  { group: 'Formations',   path: 'images/formations/mobile-creator.jpg', label: 'Mobile Creator' },
+  { group: 'Formations',   path: 'images/formations/creator-video.jpg',  label: 'Creator Video'  },
+  // Groupe : Studio
+  { group: 'Studio',       path: 'images/studio.png',                    label: 'Studio KreatorPlay' },
+  // Groupe : Intervenants
+  { group: 'Intervenants', path: 'images/intervenants/realisation-pub.jpg',        label: 'Réalisation Pub' },
+  { group: 'Intervenants', path: 'images/intervenants/realisation-pub-cinema.jpg', label: 'Réalisation Pub & Cinéma' },
+  { group: 'Intervenants', path: 'images/intervenants/youtube-clip.jpg',           label: 'YouTube / Clip' },
+  { group: 'Intervenants', path: 'images/intervenants/fiction-horreur.jpg',        label: 'Fiction Horreur' },
+  { group: 'Intervenants', path: 'images/intervenants/montage.jpg',                label: 'Montage' },
+  { group: 'Intervenants', path: 'images/intervenants/podcast.jpg',                label: 'Podcast' },
+  { group: 'Intervenants', path: 'images/intervenants/plateau-youtube.jpg',        label: 'Plateau YouTube' },
+  { group: 'Intervenants', path: 'images/intervenants/outils-ia.jpg',              label: 'Outils IA' },
+  { group: 'Intervenants', path: 'images/intervenants/photographie.jpg',           label: 'Photographie' },
+  { group: 'Intervenants', path: 'images/intervenants/chef-operateur.jpg',         label: 'Chef Opérateur' },
+  { group: 'Intervenants', path: 'images/intervenants/ecriture.jpg',               label: 'Écriture' },
+];
+
+// Map index → File (remplacements sélectionnés)
+const photoReplacements = new Map();
+
+function renderPhotos() {
+  const grid = document.getElementById('photoGrid');
+  let html = '';
+  let lastGroup = null;
+
+  PHOTOS.forEach((p, i) => {
+    if (p.group !== lastGroup) {
+      html += `<div class="photo-group-label">${p.group}</div>`;
+      lastGroup = p.group;
+    }
+    html += `
+    <div class="photo-card" id="photo-card-${i}">
+      <div class="photo-thumb">
+        <img id="photo-img-${i}" src="${p.path}?_=${Date.now()}" alt="${p.label}" class="loading"
+             onload="this.classList.remove('loading')"
+             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%231a1a1a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23555%22 font-size=%2212%22 font-family=%22sans-serif%22 text-anchor=%22middle%22 dy=%22.35em%22%3ENon trouv%C3%A9e%3C/text%3E%3C/svg%3E'">
+        <div class="photo-badge">Modifié</div>
+      </div>
+      <div class="photo-info">
+        <div class="photo-name">${p.label}</div>
+        <div class="photo-path">${p.path}</div>
+        <button class="btn-change" onclick="pickPhoto(${i})">+ Changer la photo</button>
+      </div>
+    </div>`;
+  });
+
+  grid.innerHTML = html;
+}
+
+function pickPhoto(i) {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/*';
+  input.onchange = () => {
+    const file = input.files[0];
+    if (!file) return;
+    photoReplacements.set(i, file);
+
+    // Preview
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = document.getElementById(`photo-img-${i}`);
+      if (img) img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+
+    // Mark card
+    const card = document.getElementById(`photo-card-${i}`);
+    if (card) card.classList.add('changed');
+
+    updatePhotoDlBar();
+  };
+  input.click();
+}
+
+function updatePhotoDlBar() {
+  const count = photoReplacements.size;
+  const bar   = document.getElementById('photoDlBar');
+  const label = document.getElementById('photoCount');
+  bar.style.display   = count > 0 ? 'flex' : 'none';
+  label.innerHTML = `<strong>${count}</strong> photo${count > 1 ? 's' : ''} modifiée${count > 1 ? 's' : ''}`;
+}
+
+async function downloadPhotos() {
+  if (photoReplacements.size === 0) return;
+
+  const btn = document.getElementById('photosDlBtn');
+  btn.disabled = true;
+  btn.textContent = 'Génération…';
+
+  try {
+    const zip = new JSZip();
+
+    for (const [i, file] of photoReplacements) {
+      const path = PHOTOS[i].path;
+      const buffer = await file.arrayBuffer();
+      zip.file(path, buffer);
+    }
+
+    const blob = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 6 } });
+    const url  = URL.createObjectURL(blob);
+    const a    = Object.assign(document.createElement('a'), { href: url, download: 'kreatorplay-photos.zip' });
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+
+    toast(`✓ ZIP téléchargé — dézippe dans le dossier du site, puis git push`);
+  } catch(e) {
+    toast('✗ Erreur : ' + e.message);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '↓ Télécharger les photos (ZIP)';
+  }
+}
+
 /* ─── INIT ─── */
+renderPhotos();
 loadIndex();
 </script>
 </body>
