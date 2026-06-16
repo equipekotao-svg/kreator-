@@ -82,75 +82,107 @@ if (burger && navLinks) {
   });
 }
 
-/* ─── CATALOGUE TABS ─── */
-document.querySelectorAll('[data-tabs]').forEach(container => {
-  container.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = btn.dataset.tab;
-      container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      container.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      container.querySelector(`.tab-panel[data-panel="${target}"]`).classList.add('active');
-    });
-  });
-});
-
-/* ─── CATALOGUE SEARCH ─── */
+/* ─── CATALOGUE TABS + SEARCH (système unifié) ─── */
 (function () {
-  const keyword  = document.getElementById('searchKeyword');
-  const filterT  = document.getElementById('filterThematique');
-  const resetBtn = document.getElementById('searchReset');
-  const countEl  = document.getElementById('searchCount');
-  if (!keyword) return;
+  const tabsContainer = document.querySelector('[data-tabs]');
+  const keyword       = document.getElementById('searchKeyword');
+  const filterT       = document.getElementById('filterThematique');
+  const resetBtn      = document.getElementById('searchReset');
+  const countEl       = document.getElementById('searchCount');
+  if (!tabsContainer) return;
 
-  const totalModules = document.querySelectorAll('.cat-card').length;
-  if (countEl) countEl.textContent = `${totalModules} modules disponibles`;
+  const allCards  = [...tabsContainer.querySelectorAll('.cat-card')];
+  const allPanels = [...tabsContainer.querySelectorAll('.tab-panel')];
+  const allTabs   = [...tabsContainer.querySelectorAll('.tab-btn')];
+  const total     = allCards.length;
+  if (countEl) countEl.textContent = `${total} modules disponibles`;
 
-  function countVisible() {
-    return document.querySelectorAll('.cat-card:not([style*="none"])').length;
-  }
-
-  function switchTab(value) {
-    if (!value) return;
-    const btn = document.querySelector(`.tab-btn[data-tab="${value}"]`);
-    if (btn) btn.click();
+  // Unique source de vérité pour l'onglet actif
+  function activateTab(domain) {
+    allTabs.forEach(b => b.classList.toggle('active', b.dataset.tab === domain));
+    allPanels.forEach(p => {
+      p.classList.toggle('active', p.dataset.panel === domain);
+      p.style.display = '';
+    });
+    if (filterT) filterT.value = domain || '';
   }
 
   function applyFilters() {
-    const kw = keyword.value.toLowerCase().trim();
-    const thematique = filterT.value;
+    const kw     = keyword ? keyword.value.toLowerCase().trim() : '';
+    const domain = filterT ? filterT.value : '';
 
-    if (thematique) {
-      switchTab(thematique);
+    if (!kw) {
+      // Sans mot-clé : vue par onglet normal
+      allPanels.forEach(p => p.style.display = '');
+      allCards.forEach(c => c.style.display = '');
+      // Re-sync visuel de l'onglet actif (peut avoir été effacé par une recherche)
+      if (domain) {
+        allTabs.forEach(b => b.classList.toggle('active', b.dataset.tab === domain));
+        allPanels.forEach(p => p.classList.toggle('active', p.dataset.panel === domain));
+      }
+      const count = domain
+        ? allCards.filter(c => c.closest('.tab-panel')?.dataset.panel === domain).length
+        : total;
+      if (countEl) countEl.textContent = domain
+        ? `${count} module${count > 1 ? 's' : ''}`
+        : `${total} modules disponibles`;
+      if (filterT) filterT.classList.toggle('active', !!domain);
+      return;
     }
 
-    document.querySelectorAll('.cat-card').forEach(card => {
-      const inActivePanel = card.closest('.tab-panel.active');
-      if (!inActivePanel) { card.style.display = 'none'; return; }
-      if (!kw) { card.style.display = ''; return; }
-      const title = card.querySelector('.cat-card__title')?.textContent.toLowerCase() || '';
-      const desc  = card.querySelector('.cat-card__desc')?.textContent.toLowerCase()  || '';
-      card.style.display = (title.includes(kw) || desc.includes(kw)) ? '' : 'none';
+    // Avec mot-clé : mode recherche cross-domaine (ou restreint au domaine actif)
+    allPanels.forEach(p => p.style.display = 'block');
+    if (!domain) allTabs.forEach(b => b.classList.remove('active'));
+
+    let visible = 0;
+    allCards.forEach(card => {
+      const cardDomain   = card.closest('.tab-panel')?.dataset.panel;
+      const title        = card.querySelector('.cat-card__title')?.textContent.toLowerCase() || '';
+      const desc         = card.querySelector('.cat-card__desc')?.textContent.toLowerCase()  || '';
+      const matchesKw    = title.includes(kw) || desc.includes(kw);
+      const matchesDomain = !domain || cardDomain === domain;
+      const show = matchesKw && matchesDomain;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
     });
 
-    const visible = countVisible();
-    if (kw || thematique) {
-      countEl.textContent = `${visible} module${visible > 1 ? 's' : ''}`;
-    } else {
-      countEl.textContent = `${totalModules} modules disponibles`;
-    }
+    // Masquer les panneaux sans résultats
+    allPanels.forEach(panel => {
+      const hasVisible = [...panel.querySelectorAll('.cat-card')].some(c => c.style.display !== 'none');
+      panel.style.display = hasVisible ? 'block' : 'none';
+    });
 
-    filterT.classList.toggle('active', !!filterT.value);
+    if (countEl) countEl.textContent = `${visible} module${visible > 1 ? 's' : ''}`;
+    if (filterT) filterT.classList.toggle('active', !!domain);
   }
 
-  filterT.addEventListener('change', applyFilters);
-  keyword.addEventListener('input', applyFilters);
-
-  resetBtn.addEventListener('click', () => {
-    keyword.value = '';
-    filterT.value = '';
-    filterT.classList.remove('active');
-    document.querySelectorAll('.cat-card').forEach(c => c.style.display = '');
-    countEl.textContent = `${totalModules} modules disponibles`;
+  // Clic sur un onglet → sync dropdown + re-filtrage si recherche active
+  allTabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activateTab(btn.dataset.tab);
+      if (keyword && keyword.value.trim()) applyFilters();
+    });
   });
+
+  // Changement dropdown → sync onglet + re-filtrage
+  if (filterT) {
+    filterT.addEventListener('change', () => {
+      if (filterT.value) activateTab(filterT.value);
+      applyFilters();
+    });
+  }
+
+  if (keyword) keyword.addEventListener('input', applyFilters);
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      if (keyword) keyword.value = '';
+      if (filterT)  { filterT.value = ''; filterT.classList.remove('active'); }
+      allPanels.forEach(p => p.style.display = '');
+      allCards.forEach(c => c.style.display = '');
+      // Restaurer l'onglet par défaut si aucun n'est actif
+      if (!tabsContainer.querySelector('.tab-btn.active')) activateTab('video');
+      if (countEl) countEl.textContent = `${total} modules disponibles`;
+    });
+  }
 })();
