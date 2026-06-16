@@ -35,7 +35,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // Surligne le lien nav correspondant à la section visible
-const sectionIds = ['formations', 'catalogues', 'intervenants', 'about', 'tarifs'];
+const sectionIds = ['formations', 'programme', 'formateurs', 'sessions', 'tarifs', 'faq'];
 const navLinkMap = {};
 sectionIds.forEach(id => {
   const link = document.querySelector(`.nav__links a[href="#${id}"]`);
