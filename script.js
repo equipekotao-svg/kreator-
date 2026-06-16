@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════
-   KOTAO ACADEMY — main script
+   KREATORPLAY — main script
    ═══════════════════════════════════════════ */
 
 /* ─── SCROLL REVEAL ─── */
@@ -104,6 +104,7 @@ document.querySelectorAll('[data-tabs]').forEach(container => {
   if (!keyword) return;
 
   const totalModules = document.querySelectorAll('.cat-card').length;
+  if (countEl) countEl.textContent = `${totalModules} modules disponibles`;
 
   function countVisible() {
     return document.querySelectorAll('.cat-card:not([style*="none"])').length;
