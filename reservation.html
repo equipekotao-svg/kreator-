@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Réserver — Kotao Academy</title>
+  <title>Réserver — KreatorPlay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -23,7 +26,7 @@
     body {
       background: var(--dark);
       color: var(--white);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
       min-height: 100vh;
     }
@@ -251,7 +254,13 @@
 
   <!-- NAV -->
   <nav>
-    <a href="index.html" class="logo" style="text-decoration:none;color:inherit;">Kotao<span>.</span>Academy</a>
+    <a href="index.html" class="logo" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:0.5rem;">
+      <svg width="26" height="26" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <rect width="36" height="36" rx="9" fill="#D1FE17"/>
+        <path d="M13 10L13 27L28 18.5L13 10Z" fill="#0a0a0a"/>
+      </svg>
+      Kreator<span>Play</span>
+    </a>
     <a href="index.html#formations" class="back-link">← Retour aux formations</a>
   </nav>
 
@@ -259,7 +268,7 @@
     <div>
       <span class="section-tag">Réservation</span>
       <h1 id="pageTitle">Réserver une formation</h1>
-      <p class="summary" id="pageSummary">Choisis ta date et remplis le formulaire, l'équipe Kotao te recontacte sous 24h pour confirmer.</p>
+      <p class="summary" id="pageSummary">Choisis ta date et remplis le formulaire, l'équipe KreatorPlay te recontacte sous 24h pour confirmer.</p>
 
       <div class="formation-card">
         <img id="formationImg" src="" alt="" />
@@ -275,7 +284,7 @@
       </div>
 
       <div class="info-block">
-        <strong>📍 Studio Kotao</strong>
+        <strong>📍 Studio KreatorPlay</strong>
         73 boulevard Charles de Gaulle, 92700 Colombes — guilhem@kotao-production.com — +33 6 13 61 36 64
       </div>
     </div>
@@ -322,7 +331,7 @@
       <div class="confirm" id="confirmBlock">
         <div class="icon">✓</div>
         <h3>Demande envoyée !</h3>
-        <p>Merci <span id="confirmName"></span>, ta demande pour <strong id="confirmFormation"></strong> le <span id="confirmDate"></span> a bien été enregistrée. L'équipe Kotao te recontacte sous 24h pour confirmer ta place.</p>
+        <p>Merci <span id="confirmName"></span>, ta demande pour <strong id="confirmFormation"></strong> le <span id="confirmDate"></span> a bien été enregistrée. L'équipe KreatorPlay te recontacte sous 24h pour confirmer ta place.</p>
       </div>
     </div>
   </div>
@@ -337,10 +346,10 @@
         format: '👤 Présentiel, 1 participant',
         price: '700€ HT',
         dates: [
-          { day: 'Mardi 7 juillet 2026', status: 'dispo', label: 'Disponible' },
-          { day: 'Jeudi 17 juillet 2026', status: 'dispo', label: 'Disponible' },
-          { day: 'Mardi 4 août 2026', status: 'limite', label: 'Dernières places' },
-          { day: 'Mardi 18 août 2026', status: 'dispo', label: 'Disponible' },
+          { day: 'Mardi 15 juillet 2026', status: 'dispo', label: 'Disponible' },
+          { day: 'Mardi 22 juillet 2026', status: 'dispo', label: 'Disponible' },
+          { day: 'Mercredi 5 août 2026', status: 'limite', label: 'Dernières places' },
+          { day: 'Mercredi 19 août 2026', status: 'dispo', label: 'Disponible' },
           { day: 'Jeudi 3 septembre 2026', status: 'dispo', label: 'Disponible' },
         ]
       },
@@ -373,11 +382,14 @@
     document.getElementById('formationFormat').textContent = data.format;
     document.getElementById('formationPrice').textContent = data.price;
 
+    const preDate = parseInt(params.get('date'));
+    const defaultDate = (!isNaN(preDate) && preDate >= 0 && preDate < data.dates.length) ? preDate : 0;
+
     const dateOptions = document.getElementById('dateOptions');
     dateOptions.innerHTML = data.dates.map((d, i) => {
       const disabled = d.status === 'complet';
       return `<label class="date-option ${disabled ? 'complet' : ''}">
-        <input type="radio" name="date" value="${d.day}" ${disabled ? 'disabled' : ''} ${i === 0 ? 'checked' : ''} required />
+        <input type="radio" name="date" value="${d.day}" ${disabled ? 'disabled' : ''} ${i === defaultDate ? 'checked' : ''} required />
         <span>${d.day}</span>
         <span class="status ${d.status}">${d.label}</span>
       </label>`;
