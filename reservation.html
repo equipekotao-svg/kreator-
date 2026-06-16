@@ -226,9 +226,18 @@
       font-size: 1rem;
       cursor: pointer;
       margin-top: 0.5rem;
-      transition: background 0.2s, transform 0.2s;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
     }
-    .btn-submit:hover { background: var(--orange-light); transform: translateY(-2px); }
+    .btn-submit:hover  { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(209,254,23,0.3); }
+    .btn-submit:active { transform: scale(0.97); }
+    .btn-submit.loading {
+      pointer-events: none;
+      background: linear-gradient(90deg, var(--orange) 0%, var(--orange-light) 50%, var(--orange) 100%);
+      background-size: 200% auto;
+      animation: shimmer 1.2s linear infinite;
+    }
 
     /* ─── CONFIRMATION ─── */
     .confirm {
@@ -247,7 +256,57 @@
       margin: 0 auto 1.2rem;
     }
     .confirm h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.6rem; }
-    .confirm p { color: var(--gray); font-size: 0.9rem; }
+    .confirm p  { color: var(--gray); font-size: 0.9rem; }
+
+    /* Confirm entrance */
+    .confirm.show .icon { animation: popIn   0.5s cubic-bezier(0.16,1,0.3,1) 0.05s both; }
+    .confirm.show h3    { animation: fadeUp  0.5s cubic-bezier(0.16,1,0.3,1) 0.2s  both; }
+    .confirm.show p     { animation: fadeUp  0.5s cubic-bezier(0.16,1,0.3,1) 0.3s  both; }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes fadeRight {
+      from { opacity: 0; transform: translateX(32px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes fadeOut {
+      from { opacity: 1; transform: none; }
+      to   { opacity: 0; transform: translateY(-12px); }
+    }
+    @keyframes popIn {
+      0%   { opacity: 0; transform: scale(0.4); }
+      70%  { transform: scale(1.12); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes shimmer {
+      from { background-position: 200% center; }
+      to   { background-position: -200% center; }
+    }
+
+    /* Page entrance — colonne gauche */
+    .section-tag   { animation: fadeUp   0.55s cubic-bezier(0.16,1,0.3,1) 0.05s both; }
+    h1             { animation: fadeUp   0.6s  cubic-bezier(0.16,1,0.3,1) 0.12s both; }
+    .summary       { animation: fadeUp   0.6s  cubic-bezier(0.16,1,0.3,1) 0.2s  both; }
+    .formation-card{ animation: fadeUp   0.7s  cubic-bezier(0.16,1,0.3,1) 0.28s both; }
+    .info-block    { animation: fadeUp   0.65s cubic-bezier(0.16,1,0.3,1) 0.38s both; }
+
+    /* Page entrance — colonne droite */
+    .form-card { animation: fadeRight 0.75s cubic-bezier(0.16,1,0.3,1) 0.18s both; }
+
+    /* Date options — animées via JS avec délai échelonné */
+    .date-anim { animation: fadeUp 0.45s cubic-bezier(0.16,1,0.3,1) both; }
+
+    /* Champ focus — micro glow */
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(209,254,23,0.1);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
   </style>
 </head>
 <body>
@@ -388,7 +447,7 @@
     const dateOptions = document.getElementById('dateOptions');
     dateOptions.innerHTML = data.dates.map((d, i) => {
       const disabled = d.status === 'complet';
-      return `<label class="date-option ${disabled ? 'complet' : ''}">
+      return `<label class="date-option date-anim ${disabled ? 'complet' : ''}" style="animation-delay:${0.32 + i * 0.07}s">
         <input type="radio" name="date" value="${d.day}" ${disabled ? 'disabled' : ''} ${i === defaultDate ? 'checked' : ''} required />
         <span>${d.day}</span>
         <span class="status ${d.status}">${d.label}</span>
@@ -397,15 +456,35 @@
 
     function submitBooking(e) {
       e.preventDefault();
-      const firstname = document.getElementById('firstname').value;
+      const firstname  = document.getElementById('firstname').value;
       const dateChoice = document.querySelector('input[name="date"]:checked');
-      document.getElementById('confirmName').textContent = firstname;
+      document.getElementById('confirmName').textContent      = firstname;
       document.getElementById('confirmFormation').textContent = data.title;
-      document.getElementById('confirmDate').textContent = dateChoice ? dateChoice.value : '';
-      document.getElementById('formWrap').style.display = 'none';
-      document.getElementById('confirmBlock').classList.add('show');
+      document.getElementById('confirmDate').textContent      = dateChoice ? dateChoice.value : '';
+
+      const btn  = e.submitter || document.querySelector('.btn-submit');
+      const form = document.getElementById('formWrap');
+
+      btn.classList.add('loading');
+      btn.textContent = 'Envoi en cours…';
+
+      setTimeout(() => {
+        form.style.animation = 'fadeOut 0.35s cubic-bezier(0.16,1,0.3,1) both';
+        setTimeout(() => {
+          form.style.display = 'none';
+          document.getElementById('confirmBlock').classList.add('show');
+        }, 340);
+      }, 600);
       return false;
     }
+
+    /* Nav border scroll */
+    const resNav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      resNav.style.borderBottomColor = window.scrollY > 40
+        ? 'rgba(209,254,23,0.12)'
+        : 'rgba(255,255,255,0.05)';
+    }, { passive: true });
   </script>
 </body>
 </html>
