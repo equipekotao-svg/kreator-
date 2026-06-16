@@ -133,7 +133,6 @@ document.querySelectorAll('[data-tabs]').forEach(container => {
     });
 
     const visible = countVisible();
-    const kw = keyword.value.trim();
     if (kw || thematique) {
       countEl.textContent = `${visible} module${visible > 1 ? 's' : ''}`;
     } else {
