@@ -47,7 +47,7 @@
       Deviens créateur<br>vidéo en<br><em>une journée.</em>
     </h1>
 
-    <p class="hero__sub hero__sub--bold">Tourne. Monte. Publie. En 7h dans un vrai studio pro.</p>
+    <p class="hero__sub hero__sub--bold">Maîtrise la vidéo de A à Z — en studio, finançable à 100% par l'AFDAS.</p>
     <p class="hero__sub">Pas de PowerPoint, pas de théorie creuse — dès 9h tu es face caméra dans notre studio à Colombes, encadré par des producteurs qui travaillent pour des marques et des médias depuis 19 ans.</p>
 
     <div class="hero__actions">
@@ -58,10 +58,10 @@
     <div class="hero__sessions">
       <span class="hero__sessions-label">Prochaines sessions :</span>
       <div class="hero__session-pills">
-        <a href="reservation.html?formation=mobile" class="session-pill">15 juil</a>
-        <a href="reservation.html?formation=mobile" class="session-pill">22 juil</a>
-        <a href="reservation.html?formation=mobile" class="session-pill">5 août</a>
-        <a href="reservation.html?formation=mobile" class="session-pill">19 août</a>
+        <a href="reservation.html?formation=mobile&date=0" class="session-pill">15 juil</a>
+        <a href="reservation.html?formation=mobile&date=1" class="session-pill">22 juil</a>
+        <a href="reservation.html?formation=mobile&date=2" class="session-pill">5 août</a>
+        <a href="reservation.html?formation=mobile&date=3" class="session-pill">19 août</a>
       </div>
       <span class="hero__sessions-warn">Places limitées</span>
     </div>
@@ -70,6 +70,41 @@
       <div class="hero__scroll-line"></div>
     </div>
   </section>
+
+  <!-- ════════════ TRUST BADGES ════════════ -->
+  <div class="trust-badges">
+    <div class="container">
+      <div class="trust-badges__grid">
+        <div class="trust-badge">
+          <div class="trust-badge__ico">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M7 10L9.5 12.5L14 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="trust-badge__text"><strong>AFDAS éligible</strong><span>Prise en charge 100%</span></div>
+        </div>
+        <div class="trust-badges__sep"></div>
+        <div class="trust-badge">
+          <div class="trust-badge__ico">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 2.5L11.8 7.2H16.8L12.8 10.1L14.3 14.9L10 12.1L5.7 14.9L7.2 10.1L3.2 7.2H8.2L10 2.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="trust-badge__text"><strong>Certifié Qualiopi</strong><span>Référentiel national qualité</span></div>
+        </div>
+        <div class="trust-badges__sep"></div>
+        <div class="trust-badge">
+          <div class="trust-badge__ico">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M4 17C4 14.2 6.7 12 10 12C13.3 12 16 14.2 16 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="trust-badge__text"><strong>Dès 1 participant</strong><span>Formation 100% sur-mesure</span></div>
+        </div>
+        <div class="trust-badges__sep"></div>
+        <div class="trust-badge">
+          <div class="trust-badge__ico">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 17.5C10 17.5 2.5 13 2.5 8C2.5 5.5 5 3.5 7.5 4.5L10 6L12.5 4.5C15 3.5 17.5 5.5 17.5 8C17.5 13 10 17.5 10 17.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="trust-badge__text"><strong>Accessible PMR</strong><span>Studio adapté handicap</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ════════════ PROOF STRIP ════════════ -->
   <div class="proof-strip">
@@ -168,7 +203,7 @@
             <h3 class="card__title">Creator Video</h3>
             <p class="card__desc">Immersion studio avec caméra pro Sony FX3 ou Black Magic 6K. Tournage, post-production sur CapCut ou Premiere, et débrief de ton projet en fin de journée.</p>
             <div class="card__footer">
-              <div class="card__price">Sur devis</div>
+              <div class="card__price">Sur devis <small style="display:block;font-size:0.7rem;font-weight:500;color:var(--muted);margin-top:0.15rem;">Échange 30 min offert</small></div>
               <a href="reservation.html?formation=creator" class="btn btn-outline-accent">Réserver →</a>
             </div>
           </div>
@@ -201,7 +236,7 @@
           </div>
           <div class="session-card__right">
             <div class="session-card__spots">Places disponibles</div>
-            <a href="reservation.html?formation=mobile" class="btn btn-outline-accent">Réserver</a>
+            <a href="reservation.html?formation=mobile&date=0" class="btn btn-outline-accent">Réserver</a>
           </div>
         </div>
         <div class="session-card" data-reveal>
@@ -215,7 +250,7 @@
           </div>
           <div class="session-card__right">
             <div class="session-card__spots">Places disponibles</div>
-            <a href="reservation.html?formation=mobile" class="btn btn-outline-accent">Réserver</a>
+            <a href="reservation.html?formation=mobile&date=1" class="btn btn-outline-accent">Réserver</a>
           </div>
         </div>
         <div class="session-card" data-reveal>
@@ -228,8 +263,8 @@
             <div class="session-card__meta">9h00 – 18h00 · Studio KreatorPlay · Colombes 92</div>
           </div>
           <div class="session-card__right">
-            <div class="session-card__spots">Places disponibles</div>
-            <a href="reservation.html?formation=mobile" class="btn btn-outline-accent">Réserver</a>
+            <div class="session-card__spots">Dernières places</div>
+            <a href="reservation.html?formation=mobile&date=2" class="btn btn-outline-accent">Réserver</a>
           </div>
         </div>
         <div class="session-card" data-reveal>
@@ -243,7 +278,7 @@
           </div>
           <div class="session-card__right">
             <div class="session-card__spots">Places disponibles</div>
-            <a href="reservation.html?formation=mobile" class="btn btn-outline-accent">Réserver</a>
+            <a href="reservation.html?formation=mobile&date=3" class="btn btn-outline-accent">Réserver</a>
           </div>
         </div>
       </div>
@@ -369,7 +404,7 @@
       <div class="formateurs-grid stagger">
         <div class="formateur-card" data-reveal>
           <div class="formateur-card__header">
-            <div class="formateur-card__avatar">G</div>
+            <div class="formateur-card__avatar formateur-card__avatar--g">G</div>
             <div>
               <h3 class="formateur-card__name">Guilhem Charreton</h3>
               <div class="formateur-card__role">Fondateur · Producteur</div>
@@ -384,7 +419,7 @@
         </div>
         <div class="formateur-card" data-reveal>
           <div class="formateur-card__header">
-            <div class="formateur-card__avatar">A</div>
+            <div class="formateur-card__avatar formateur-card__avatar--a">A</div>
             <div>
               <h3 class="formateur-card__name">Adrien Della Valle</h3>
               <div class="formateur-card__role">Réalisateur · Chef Monteur</div>
@@ -420,7 +455,7 @@
           <div class="testi-card__stars">★★★★★</div>
           <p class="testi-card__quote">"En une journée chez KreatorPlay, j'ai filmé, monté et publié une vidéo pro avec mon iPhone. Les formateurs vont droit au but. Je repars avec des réflexes concrets que j'utilise dès le lendemain."</p>
           <div class="testi-card__author">
-            <img class="testi-card__avatar" src="https://i.pravatar.cc/80?img=5" alt="" />
+            <div class="testi-card__avatar testi-card__avatar--initial">S</div>
             <div>
               <div class="testi-card__name">Sophie M.</div>
               <div class="testi-card__role">Communicante RSE</div>
@@ -431,7 +466,7 @@
           <div class="testi-card__stars">★★★★★</div>
           <p class="testi-card__quote">"La formation Mobile Creator m'a tout de suite donné les clés pour créer du contenu LinkedIn de qualité pro. Guilhem et Adrien transmettent vraiment leur savoir-faire, c'est du concret, pas de la théorie."</p>
           <div class="testi-card__author">
-            <img class="testi-card__avatar" src="https://i.pravatar.cc/80?img=12" alt="" />
+            <div class="testi-card__avatar testi-card__avatar--initial testi-avatar--blue">T</div>
             <div>
               <div class="testi-card__name">Thomas R.</div>
               <div class="testi-card__role">Fondateur startup</div>
@@ -442,7 +477,7 @@
           <div class="testi-card__stars">★★★★★</div>
           <p class="testi-card__quote">"Avant la formation KreatorPlay, mes vidéos terrain manquaient de qualité. Après Mobile Creator, j'ai les bons réflexes : cadrage, son, montage. Le studio est impressionnant, l'ambiance est top."</p>
           <div class="testi-card__author">
-            <img class="testi-card__avatar" src="https://i.pravatar.cc/80?img=23" alt="" />
+            <div class="testi-card__avatar testi-card__avatar--initial testi-avatar--orange">L</div>
             <div>
               <div class="testi-card__name">Lucas P.</div>
               <div class="testi-card__role">Journaliste indépendant</div>
@@ -457,18 +492,9 @@
   <section class="section catalogues" id="catalogues">
     <div class="container">
 
-      <span class="section-tag" data-reveal>Catalogue Orange</span>
+      <span class="section-tag" data-reveal>Catalogue</span>
       <h2 class="section-title" data-reveal>Tous nos modules<br>de formation.</h2>
-      <p class="section-sub" data-reveal>L'Accès Orange débloque l'ensemble du catalogue — 6 domaines, plus de 20 modules, animés par l'équipe Kotao et des intervenants experts.</p>
-
-      <div class="vignette" data-reveal>
-        <div class="vignette__icon" style="background:rgba(255,140,0,0.12);border:1px solid rgba(255,140,0,0.3);color:#ff8c00;font-size:0.85rem;font-weight:800;letter-spacing:0.04em;">Orange</div>
-        <div class="vignette__text">
-          <h3>Accès Orange — Catalogue complet</h3>
-          <p>6 domaines · Vidéo, Audio, IA, Production, Creator, Photo</p>
-        </div>
-        <div class="vignette__badge">Accès Orange</div>
-      </div>
+      <p class="section-sub" data-reveal>6 domaines, plus de 20 modules — Vidéo, Audio, IA, Production, Creator, Photo — animés par l'équipe KreatorPlay et des intervenants experts.</p>
 
       <!-- Barre de recherche intégrée au catalogue -->
       <div class="catalogue-search" id="searchBar">
@@ -604,7 +630,8 @@
 
         <div class="price-card" data-reveal>
           <div class="price-card__name">Creator Video</div>
-          <div class="price-card__amount">Sur devis</div>
+          <div class="price-card__amount" style="font-size:2.2rem;">Sur devis</div>
+          <div class="price-card__hint">Échange de 30 min offert pour cadrer votre projet</div>
           <div class="price-card__desc">1 jour · studio + tournage caméra pro</div>
           <ul class="price-card__features">
             <li>Immersion studio & écriture du pitch</li>
@@ -655,8 +682,9 @@
     <div class="cta__glow"></div>
     <h2 data-reveal>Prêt à devenir<br>autonome en vidéo ?</h2>
     <p data-reveal>Réserve un échange de 30 min avec l'équipe KreatorPlay pour valider ton projet.</p>
-    <div data-reveal>
-      <a href="mailto:guilhem@kotao-production.com" class="btn btn-primary" style="font-size:1.05rem;padding:1.1rem 2.5rem;">Réserver un entretien →</a>
+    <div data-reveal class="cta__actions">
+      <a href="tel:+33613613664" class="btn btn-primary" style="font-size:1.05rem;padding:1.1rem 2.5rem;">Appeler pour réserver →</a>
+      <a href="mailto:guilhem@kotao-production.com" class="btn btn-ghost" style="font-size:1.05rem;padding:1.1rem 2.5rem;">Par email</a>
     </div>
   </div>
 
